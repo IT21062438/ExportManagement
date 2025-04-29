@@ -10,7 +10,7 @@ Ceylone Exports is a comprehensive Export Management System designed to streamli
 - 🌍 **Export Management** – Automate and handle export documentation and compliance.
 - 🧪 **Quality Check Management** – Ensure goods meet required standards before dispatch.
 - 🚚 **Transport Management** – Track and manage shipping and delivery logistics.
-- 🖼️ **Company Branding** – Includes system-wide logo and brand representation.
+
 
 ## 🛠️ Technologies Used
 
@@ -19,4 +19,3 @@ Ceylone Exports is a comprehensive Export Management System designed to streamli
 - Database: `MongoDB`
 - Version Control: `Git`, `GitHub`
 
-## 🚀 Getting Started
