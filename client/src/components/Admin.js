@@ -62,98 +62,73 @@ export default class Admin extends Component {
           <hr />
           <center></center>
 
-          <div
-            class="p-3 mb-2  text-dark rounded-3"
-            style={{ backgroundColor: "#faf0e6" }}
-          >
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="card bg-light">
-                  <div class="card-body">
-                    <center>
-                      <h2 class="card-title">CUSTOMER MANAGEMNT REPORTS</h2>
-                      <p class="card-text"></p>
-                      <a href="/matRet" class="btn btn-info">
-                        <i class="fas fa-arrow-alt-circle-right"></i>
-                      </a>
-                    </center>
+          <div className="container py-4">
+            <div className="row g-4">
+              <div className="col-sm-6">
+                <div className="card h-100 shadow-sm hover-shadow transition-all">
+                  <div className="card-body text-center p-4">
+                    <h2 className="card-title h4 mb-3" style={{ color: "#2c3e50" }}>CUSTOMER MANAGEMENT REPORTS</h2>
+                    <a href="/matRet" className="btn btn-primary rounded-pill px-4">
+                      <i className="fas fa-arrow-alt-circle-right"></i>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-6">
-                <div class="card bg-light">
-                  <div class="card-body">
-                    <center>
-                      <h2 class="card-title">INVENTORY REPORTS</h2>
-                      <p class="card-text"></p>
-                      <a href="/intrep" class="btn btn-info">
-                        <i class="fas fa-arrow-alt-circle-right"></i>
-                      </a>
-                    </center>
-                  </div>
-                </div>
-                <br />
-              </div>
-
-              <div class="col-sm-6">
-                <div class="card bg-light">
-                  <div class="card-body">
-                    <center>
-                      <h2 class="card-title">PRODUCTION REPORTS</h2>
-                      <p class="card-text"></p>
-                      <a href="/prorep" class="btn btn-info">
-                        <i class="fas fa-arrow-alt-circle-right"></i>
-                      </a>
-                    </center>
+              <div className="col-sm-6">
+                <div className="card h-100 shadow-sm hover-shadow transition-all">
+                  <div className="card-body text-center p-4">
+                    <h2 className="card-title h4 mb-3" style={{ color: "#2c3e50" }}>INVENTORY REPORTS</h2>
+                    <a href="/intrep" className="btn btn-primary rounded-pill px-4">
+                      <i className="fas fa-arrow-alt-circle-right"></i>
+                    </a>
                   </div>
                 </div>
               </div>
 
-              <div class="col-sm-6">
-                <div class="card bg-light">
-                  <div class="card-body">
-                    <center>
-                      <h2 class="card-title">EXPORT REPORTS</h2>
-                      <p class="card-text"></p>
-                      <a href="/matins" class="btn btn-info">
-                        <i class="fas fa-arrow-alt-circle-right"></i>
-                      </a>
-                    </center>
+              <div className="col-sm-6">
+                <div className="card h-100 shadow-sm hover-shadow transition-all">
+                  <div className="card-body text-center p-4">
+                    <h2 className="card-title h4 mb-3" style={{ color: "#2c3e50" }}>PRODUCTION REPORTS</h2>
+                    <a href="/prorep" className="btn btn-primary rounded-pill px-4">
+                      <i className="fas fa-arrow-alt-circle-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-6">
+                <div className="card h-100 shadow-sm hover-shadow transition-all">
+                  <div className="card-body text-center p-4">
+                    <h2 className="card-title h4 mb-3" style={{ color: "#2c3e50" }}>EXPORT REPORTS</h2>
+                    <a href="/matins" className="btn btn-primary rounded-pill px-4">
+                      <i className="fas fa-arrow-alt-circle-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-6">
+                <div className="card h-100 shadow-sm hover-shadow transition-all">
+                  <div className="card-body text-center p-4">
+                    <h2 className="card-title h4 mb-3" style={{ color: "#2c3e50" }}>QUALITY CHECK REPORTS</h2>
+                    <a href="/matRet" className="btn btn-primary rounded-pill px-4">
+                      <i className="fas fa-arrow-alt-circle-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-sm-6">
+                <div className="card h-100 shadow-sm hover-shadow transition-all">
+                  <div className="card-body text-center p-4">
+                    <h2 className="card-title h4 mb-3" style={{ color: "#2c3e50" }}>TRANSPORT MANAGEMENT REPORTS</h2>
+                    <a href="/lmo" className="btn btn-primary rounded-pill px-4">
+                      <i className="fas fa-arrow-alt-circle-right"></i>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-            <br />
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="card bg-light">
-                  <div class="card-body">
-                    <center>
-                      <h2 class="card-title">QUALITY CHECK REPORTS</h2>
-                      <p class="card-text"></p>
-                      <a href="/matRet" class="btn btn-info">
-                        <i class="fas fa-arrow-alt-circle-right"></i>
-                      </a>
-                    </center>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card bg-light">
-                  <div class="card-body">
-                    <center>
-                      <h2 class="card-title">TRANSPORT MANAGEMNT REPORTS</h2>
-                      <p class="card-text"></p>
-                      <a href="/lmo" class="btn btn-info">
-                        <i class="fas fa-arrow-alt-circle-right"></i>
-                      </a>
-                    </center>
-                  </div>
-                </div>
-                <br />
-              </div>
-            </div>
-            <br />
           </div>
 
           <hr />

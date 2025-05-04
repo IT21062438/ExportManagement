@@ -9,97 +9,129 @@ class NavBar extends Component {
           <ul className="sidebar-nav">
             <br />
             <br />
-            &nbsp; &nbsp; &nbsp;
-            <img
-              src="%PUBLIC_URL%../../logo.png"
-              class="rounded-circle"
-              width="200"
-              height="200"
-              alt="logo"
-            />
-            <br />
-            <br />
-            <hr />
-            <li>
+            <div className="text-center mb-4">
+              <img
+                src="%PUBLIC_URL%../../logo.png"
+                className="rounded-circle shadow-sm"
+                width="150"
+                height="150"
+                alt="logo"
+                style={{ border: "3px solid #fff", boxShadow: "0 0 10px rgba(0,0,0,0.1)" }}
+              />
+            </div>
+            <hr className="my-4" style={{ borderColor: "rgba(255,255,255,0.1)" }} />
+            <li className="nav-item">
               <div className="dropdown">
-                <i class="fas fa-sort-amount-up-alt"></i>
-                &nbsp; Customer Management
-                <div className="dropdown-content">
-                  <a href="/requests">Customer requests Dashboard</a>
-                  <a href="/reqadd">Add Customer request</a>
-                  <a href="/reqrep">Customer requests reports</a>
-                  <a href="/inquiries">Customer Inquiries Dashboard</a>
-                  <a href="/inqadd">Add Customer inquiry</a>
-                  <a href="/inqrep">Customer Inquiry reports</a>
+                <i className="fas fa-sort-amount-up-alt me-2"></i>
+                <span className="nav-link-text">Customer </span>
+                <div className="dropdown-content shadow-lg">
+                  <a href="/requests" className="dropdown-item">
+                    <i className="fas fa-chart-line me-2"></i>Requests Dashboard
+                  </a>
+                  <a href="/reqadd" className="dropdown-item">
+                    <i className="fas fa-plus-circle me-2"></i>Add request
+                  </a>
+                  <a href="/reqrep" className="dropdown-item">
+                    <i className="fas fa-file-alt me-2"></i>Requests reports
+                  </a>
+                  <a href="/inquiries" className="dropdown-item">
+                    <i className="fas fa-question-circle me-2"></i>Inquiries Dashboard
+                  </a>
+                  <a href="/inqadd" className="dropdown-item">
+                    <i className="fas fa-plus-circle me-2"></i>Add inquiry
+                  </a>
+                  <a href="/inqrep" className="dropdown-item">
+                    <i className="fas fa-file-alt me-2"></i>Inquiry reports
+                  </a>
                 </div>
               </div>
             </li>
-            <hr />
-            <li>
+            <hr className="my-4" style={{ borderColor: "rgba(255,255,255,0.1)" }} />
+            <li className="nav-item">
               <div className="dropdown">
-                <i class="fas fa-cubes"></i>
-                &nbsp; Inventory Management
-                <div className="dropdown-content">
-                  <a href="/intdash">Inventory Dashboard</a>
-
-                  <a href="/intrep">Reports</a>
+                <i className="fas fa-cubes me-2"></i>
+                <span className="nav-link-text">Inventory</span>
+                <div className="dropdown-content shadow-lg">
+                  <a href="/intdash" className="dropdown-item">
+                    <i className="fas fa-chart-line me-2"></i>Inventory Dashboard
+                  </a>
+                  <a href="/intrep" className="dropdown-item">
+                    <i className="fas fa-file-alt me-2"></i>Inventory Reports
+                  </a>
                 </div>
               </div>
             </li>
-            <hr />
-            <li>
+            <hr className="my-4" style={{ borderColor: "rgba(255,255,255,0.1)" }} />
+            <li className="nav-item">
               <div className="dropdown">
-                <i class="fab fa-product-hunt"></i>
-                &nbsp; Production Management
-                <div className="dropdown-content">
-                  <a href="/prodash">Production Dashboard</a>
-                  <a href="/prorep">Slot Reports</a>
+                <i className="fab fa-product-hunt me-2"></i>
+                <span className="nav-link-text">Production </span>
+                <div className="dropdown-content shadow-lg">
+                  <a href="/prodash" className="dropdown-item">
+                    <i className="fas fa-chart-line me-2"></i>Production Dashboard
+                  </a>
+                  <a href="/prorep" className="dropdown-item">
+                    <i className="fas fa-file-alt me-2"></i>Slot Reports
+                  </a>
                 </div>
               </div>
             </li>
-            <hr />
-            <li>
+            <hr className="my-4" style={{ borderColor: "rgba(255,255,255,0.1)" }} />
+            <li className="nav-item">
               <div className="dropdown">
-                <i class="fas fa-cubes"></i>
-                &nbsp; Export Management
-                <div className="dropdown-content">
-                  <a href="/expDash">Export Dashboard</a>
-                  <a href="/buyerReg">Buyer Registration</a>
-
-                  <a href="#">Reports</a>
+                <i className="fas fa-cubes me-2"></i>
+                <span className="nav-link-text">Export</span>
+                <div className="dropdown-content shadow-lg">
+                  <a href="/expDash" className="dropdown-item">
+                    <i className="fas fa-chart-line me-2"></i>Export Dashboard
+                  </a>
+                  <a href="/buyerReg" className="dropdown-item">
+                    <i className="fas fa-user-plus me-2"></i>Buyer Registration
+                  </a>
+                  <a href="#" className="dropdown-item">
+                    <i className="fas fa-file-alt me-2"></i>Reports
+                  </a>
                 </div>
               </div>
             </li>
-            <hr />
-            <li>
+            <hr className="my-4" style={{ borderColor: "rgba(255,255,255,0.1)" }} />
+            <li className="nav-item">
               <div className="dropdown">
-                <i class="fas fa-cubes"></i>
-                &nbsp; QC Management
-                <div className="dropdown-content">
-                  <a href="/homeqc">QC Dashboard</a>
-                  <a href="/add">QC Card</a>
+                <i className="fas fa-cubes me-2"></i>
+                <span className="nav-link-text">Quality check</span>
+                <div className="dropdown-content shadow-lg">
+                  <a href="/homeqc" className="dropdown-item">
+                    <i className="fas fa-chart-line me-2"></i>QC Dashboard
+                  </a>
+                  <a href="/add" className="dropdown-item">
+                    <i className="fas fa-plus-circle me-2"></i>QC Card
+                  </a>
                 </div>
               </div>
             </li>
-            <hr />
-            <li>
+            <hr className="my-4" style={{ borderColor: "rgba(255,255,255,0.1)" }} />
+            <li className="nav-item">
               <div className="dropdown">
-                <i class="fas fa-cubes"></i>
-                &nbsp; Transort
-                <div className="dropdown-content">
-                  <a href="/hometr">TR Dashboard</a>
-                  <a href="/addtr">TR Card</a>
+                <i className="fas fa-cubes me-2"></i>
+                <span className="nav-link-text">Transport</span>
+                <div className="dropdown-content shadow-lg">
+                  <a href="/hometr" className="dropdown-item">
+                    <i className="fas fa-chart-line me-2"></i>TR Dashboard
+                  </a>
+                  <a href="/addtr" className="dropdown-item">
+                    <i className="fas fa-plus-circle me-2"></i>TR Card
+                  </a>
                 </div>
               </div>
             </li>
-            <hr />
-            <li>
-              <a href="/admin">
-                <i class="fas fa-users-cog"></i>
-                &nbsp; Admin
+            <hr className="my-4" style={{ borderColor: "rgba(255,255,255,0.1)" }} />
+            <li className="nav-item">
+              <a href="/admin" className="nav-link">
+                <i className="fas fa-users-cog me-2"></i>
+                <span className="nav-link-text">Admin</span>
               </a>
             </li>
-            <hr />
+            <hr className="my-4" style={{ borderColor: "rgba(255,255,255,0.1)" }} />
           </ul>
         </div>
 
