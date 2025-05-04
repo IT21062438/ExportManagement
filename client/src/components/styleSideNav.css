@@ -10,10 +10,6 @@ body {
   transition: all 0.5s ease;
 }
 
-
-
-
-
 #wrapper.toggled {
   padding-left: 250px;
 }
@@ -48,7 +44,6 @@ body {
   margin-right: -250px;
 }
 
-
 /* Sidebar Styles */
 
 .sidebar-nav {
@@ -74,29 +69,30 @@ body {
 .sidebar-nav li a:hover {
   text-decoration: none;
   color: #fff;
-   background: rgb(10, 39, 55);
+  background: rgb(10, 39, 55);
 }
 
-.sidebar-nav li a:active, .sidebar-nav li a:focus {
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
   text-decoration: none;
 }
 
-.sidebar-nav>.sidebar-brand {
+.sidebar-nav > .sidebar-brand {
   height: 65px;
   font-size: 18px;
   line-height: 60px;
 }
 
-.sidebar-nav>.sidebar-brand a {
+.sidebar-nav > .sidebar-brand a {
   color: #999999;
 }
 
-.sidebar-nav>.sidebar-brand a:hover {
+.sidebar-nav > .sidebar-brand a:hover {
   color: #fff;
   background: none;
 }
 
-@media(min-width:900px) {
+@media (min-width: 900px) {
   #wrapper {
     padding-left: 0;
   }
@@ -143,12 +139,14 @@ body {
 
 .dropdown-content a {
   color: rgba(0, 0, 0, 0);
-  width:100%;
+  width: 100%;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -159,12 +157,12 @@ body {
   background: rgba(3, 21, 48, 0);
 }
 
- /* STYLES SPECIFIC TO FOOTER  */
- .footer {
+/* STYLES SPECIFIC TO FOOTER  */
+.footer {
   width: 100%;
-  height:150px;
+  height: 150px;
   position: relative;
-  background-color:#013220;
+  background-color: #013220;
   bottom: 0;
   text-align: center;
 }
@@ -184,10 +182,10 @@ body {
   font-size: 12px;
   line-height: 17px;
   padding: 20px 0px 5px 0px;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255, 255, 255, 0.2);
   font-weight: normal;
   text-transform: uppercase;
-  letter-spacing: 0.250em;
+  letter-spacing: 0.25em;
 }
 .footer .col ul {
   list-style-type: none;
@@ -201,9 +199,9 @@ body {
   font-weight: bold;
   padding: 5px 0px 5px 0px;
   cursor: pointer;
-  transition: .2s;
-  -webkit-transition: .2s;
-  -moz-transition: .2s;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
 }
 .social ul li {
   display: inline-block;
@@ -212,9 +210,9 @@ body {
 
 .footer .col ul li:hover {
   color: #ffffff;
-  transition: .1s;
-  -webkit-transition: .1s;
-  -moz-transition: .1s;
+  transition: 0.1s;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
 }
 .clearfix {
   clear: both;
@@ -246,15 +244,15 @@ body {
   }
 }
 @media only screen and (max-width: 500px) {
-    .footer .col {
-      width: 50%;
-    }
-    .footer .col h1 {
-      font-size: 14px;
-    }
-    .footer .col ul li {
-      font-size: 13px;
-    }
+  .footer .col {
+    width: 50%;
+  }
+  .footer .col h1 {
+    font-size: 14px;
+  }
+  .footer .col ul li {
+    font-size: 13px;
+  }
 }
 @media only screen and (max-width: 340px) {
   .footer .col {

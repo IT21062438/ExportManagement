@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom"; 
+import { Link, useHistory } from "react-router-dom";
 import { handleError, handleSuccess } from "../Utils";
+import bgImage from '../assets/background.jpg';
 import "./login.css";
 
 function Login() {
@@ -9,7 +10,7 @@ function Login() {
     password: "",
   });
 
-  const history = useHistory(); 
+  const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,13 +36,20 @@ function Login() {
         body: JSON.stringify(loginInfo),
       });
       const result = await response.json();
-      const { success, message, jwtToken, name, error } = result;
+      const { success, message, jwtToken, name, role, error } = result;
+
       if (success) {
         handleSuccess(message);
         localStorage.setItem("token", jwtToken);
         localStorage.setItem("loggedInUser", name);
+        localStorage.setItem("role", role);
+
         setTimeout(() => {
-          history.push("/home");
+          if (role === "admin") {
+            history.push("/admin");
+          } else {
+            history.push("/profile");
+          }
         }, 1500);
       } else if (error) {
         const details = error?.details?.[0]?.message;
@@ -49,6 +57,7 @@ function Login() {
       } else {
         handleError(message);
       }
+
       console.log(result);
     } catch (error) {
       handleError(error.message);
@@ -57,7 +66,8 @@ function Login() {
 
   return (
     
-    <div className="login-page">
+    <div className="login-page" style={{ backgroundImage: `url(${bgImage})` }}> 
+    
       <div className="signup-container">
         <h2>Login</h2>
 
