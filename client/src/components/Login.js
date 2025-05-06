@@ -119,7 +119,8 @@ function Login() {
                   className="login-logo"
                 />
               </div>
-              <h2>Welcome Back</h2>
+              <h4>Welcome Back</h4>
+              <h6>Log in to manage exports and streamline your workflow</h6>
 
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -157,7 +158,7 @@ function Login() {
             <div className="company-info">
               <h3>Why Choose Us?</h3>
               <ul>
-                <li>20+ Years of Industry Experience</li>
+                <li>10+ Years of Industry Experience</li>
                 <li>Global Network of Partners</li>
                 <li>Certified Quality Standards</li>
                 <li>Dedicated Customer Service</li>

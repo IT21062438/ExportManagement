@@ -78,6 +78,10 @@
   font-weight: 500;
 }
 
+.signup-container h4 {
+  color: #ffffff;
+}
+
 .signup-container .form-group {
   margin-bottom: 1.5rem;
   text-align: left;
