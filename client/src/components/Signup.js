@@ -57,7 +57,7 @@ function Signup() {
   return (
     <div className="login-page">
       <div className="signup-container">
-        <h2>Sign Up</h2>
+        <h4>Sign up and start making smarter moves</h4>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
