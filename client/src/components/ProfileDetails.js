@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import ProfileImg from "../assets/profile.jpg";
-import "./ProfileDetails.css";
+import "./styles/ProfileDetails.css";
 
 function ProfileDetails() {
   const [userData, setUserData] = useState({

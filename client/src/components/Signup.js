@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { handleError, handleSuccess } from "../Utils";
-import "./login.css";
+import "./styles/login.css";
 
 function Signup() {
   const [signupInfo, setSignupInfo] = useState({

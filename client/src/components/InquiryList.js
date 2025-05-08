@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import './styleSideNav.css';
+import './styles/styleSideNav.css';
 
 export default class InquiryList extends Component {
 

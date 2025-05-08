@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./styleSideNav.css";
+import "./styles/styleSideNav.css";
 
 class NavBar extends Component {
   render() {

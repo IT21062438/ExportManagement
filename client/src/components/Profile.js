@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import "./Profile.css";
+import "./styles/Profile.css";
 
 function Profile() {
   const [userName, setUserName] = useState("User");

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { handleError, handleSuccess } from "../Utils";
 import bgImage from "../assets/background.jpg";
-import "./login.css";
+import "./styles/login.css";
 
 function Login() {
   const [loginInfo, setLoginInfo] = useState({

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./styleSideNav.css";
+import "./styles/styleSideNav.css";
 import Swal from "sweetalert2";
 import moment from "moment";
 

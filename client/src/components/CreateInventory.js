@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import "./styleSideNav.css";
+import "./styles/styleSideNav.css";
 import moment from "moment";
 
 export default class CreateInventory extends Component {
