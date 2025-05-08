@@ -42,6 +42,7 @@ function Login() {
         handleSuccess(message);
         localStorage.setItem("token", jwtToken);
         localStorage.setItem("loggedInUser", name);
+        localStorage.setItem("email", email); 
         localStorage.setItem("role", role);
 
         setTimeout(() => {
