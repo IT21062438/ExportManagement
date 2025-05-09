@@ -335,9 +335,8 @@ export default class CreateRequest extends Component {
     return (
       <div id="wrapper" className="toggled">
         <div id="page-content-wrapper">
-          <div className="container-fluid" style={{ paddingLeft: "40px" }}>
-            {/* custom navigation        */}
-            <nav
+          {/* custom navigation        */}
+          <nav
               class="navbar navbar-expand-lg rounded-3"
               style={{ backgroundColor: "#006a4e" }}
             >
@@ -388,6 +387,8 @@ export default class CreateRequest extends Component {
               </div>
             </nav>
             <hr />
+          <div className="container-fluid" style={{ paddingLeft: "40px" }}>
+            
             <div className="col-md-8 mt-4">
               <h1 className="h3 mb-3 font-weight-normal">
                 Create New Customer Request
