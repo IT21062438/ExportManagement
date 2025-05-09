@@ -249,6 +249,15 @@ export default class CreatePostQC extends Component {
                       Dashboard
                     </a>
                   </li>
+                  <li class="nav-item active">
+                    <a
+                      style={{ textDecoration: "none", color: "white" }}
+                      class="nav-link"
+                      href="/homeqc"
+                    >
+                      &#62; Qc Details
+                    </a>
+                  </li>
                   <li class="nav-item">
                     <a
                       style={{ textDecoration: "none", color: "white" }}
