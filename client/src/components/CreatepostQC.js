@@ -221,7 +221,6 @@ export default class CreatePostQC extends Component {
       //component organizer
       <div className="content" style={{ paddingLeft: "80px", width: "100%" }}>
         <div className="col-md-8 mt-4 mx-auto">
-          <h1 className="h3 mb-3 font-weight-nomal">Add new Check Card</h1>
           <form className="needs-validation" noValidate>
             {/* custom navigation        */}
             <nav
@@ -265,7 +264,7 @@ export default class CreatePostQC extends Component {
               </div>
             </nav>
             <hr />
-
+            <h1 className="h3 mb-3 font-weight-nomal">Add new Check Card</h1>
             <div class="row">
               <div class="col">
                 <lable style={{ marginBottom: "5px" }}>Product ID</lable>
