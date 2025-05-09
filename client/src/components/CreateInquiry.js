@@ -151,8 +151,8 @@ export default class CreateInquiry extends Component {
     return (
       <div id="wrapper" className="toggled">
         <div id="page-content-wrapper">
-          <div className="container-fluid">
-            <div className="col-md-8 mt-4 mx-auto">
+          <div className="container-fluid" style={{ paddingLeft: "50px" }}>
+            <div className="col-md-8 mt-4">
               <h1 className="h3 mb-3 font-weight-normal">
                 Create New Customer Inquiry
               </h1>
