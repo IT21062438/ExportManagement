@@ -224,6 +224,15 @@ export default class CreateTransport extends Component {
                       Dashboard
                     </a>
                   </li>
+                  <li class="nav-item active">
+                    <a
+                      style={{ textDecoration: "none", color: "white" }}
+                      class="nav-link"
+                      href="/hometr"
+                    >
+                      &#62; TR Details
+                    </a>
+                  </li>
                   <li class="nav-item">
                     <a
                       style={{ textDecoration: "none", color: "white" }}
