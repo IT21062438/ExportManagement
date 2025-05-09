@@ -87,7 +87,7 @@ class NavBar extends Component {
                     Dashboard
                   </a>
                   <a href="/prorep" className="dropdown-item">
-                    <i className="fas fa-file-alt me-2"></i>Slot Reports
+                    <i className="fas fa-file-alt me-2"></i>Production Reports
                   </a>
                 </div>
               </div>
@@ -104,11 +104,9 @@ class NavBar extends Component {
                   <a href="/expDash" className="dropdown-item">
                     <i className="fas fa-chart-line me-2"></i>Export Dashboard
                   </a>
-                  <a href="/buyerReg" className="dropdown-item">
-                    <i className="fas fa-user-plus me-2"></i>Buyer Registration
-                  </a>
-                  <a href="#" className="dropdown-item">
-                    <i className="fas fa-file-alt me-2"></i>Reports
+                  
+                  <a href="/addexp" className="dropdown-item">
+                    <i className="fas fa-plus-circle me-2"></i>Add Export
                   </a>
                 </div>
               </div>
