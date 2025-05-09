@@ -195,183 +195,183 @@ export default class CreateTransport extends Component {
     return (
       //component organizer
       <div className="content" style={{ paddingLeft: "70px" }}>
-      <div className="col-md-8 mt-4 mx-auto">
-        <h1 className="h3 mb-3 font-weight-nomal">Add New Transport Card</h1>
-        <form className="needs-validation" noValidate>
-          {/* custom navigation        */}
-          <nav
-            class="navbar navbar-expand-lg rounded-3"
-            style={{ backgroundColor: "#006a4e" }}
-          >
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+        <div className="col-md-8 mt-4 mx-auto">
+          <form className="needs-validation" noValidate>
+            {/* custom navigation        */}
+            <nav
+              class="navbar navbar-expand-lg rounded-3"
+              style={{ backgroundColor: "#006a4e" }}
             >
-              <span class="navbar-toggler-icon"></span>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a
+                      style={{ textDecoration: "none", color: "white" }}
+                      class="nav-link"
+                      href="/home"
+                    >
+                      Dashboard
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      style={{ textDecoration: "none", color: "white" }}
+                      class="nav-link"
+                      href="/addtr"
+                    >
+                      {" "}
+                      &#62; Add TR Details{" "}
+                      <span class="sr-only">(current)</span>{" "}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <hr />
+            <h1 className="h3 mb-3 font-weight-nomal">
+              Add New Transport Card
+            </h1>
+            <div className="form-group" style={{ marginBottom: "15px" }}>
+              <lable style={{ marginBottom: "5px" }}>Transport ID</lable>
+              <input
+                type="text"
+                className="form-control"
+                maxlength="5"
+                name="TransportID"
+                placeholder="Enter Transport ID"
+                value={this.state.TransportID}
+                onChange={this.handleInputChange}
+                required
+              />
+              <div style={{ fontSize: 15, color: "red" }}>
+                {this.state.TransportIDError}
+              </div>
+            </div>
+
+            <div className="form-group" style={{ marginBottom: "15px" }}>
+              <lable style={{ marginBottom: "5px" }}>Vehicle ID</lable>
+              <input
+                type="text"
+                className="form-control"
+                maxlength="8"
+                name="VehicleID"
+                placeholder="Enter Vehicle ID"
+                value={this.state.VehicleID}
+                onChange={this.handleInputChange}
+                required
+              />
+              <div style={{ fontSize: 15, color: "red" }}>
+                {this.state.VehicleIDError}
+              </div>
+            </div>
+
+            <div className="form-group" style={{ marginBottom: "15px" }}>
+              <lable style={{ marginBottom: "5px" }}>Vehicle Type</lable>
+              <input
+                type="text"
+                className="form-control"
+                name="VehicleType"
+                placeholder="Enter Vehicle Type"
+                value={this.state.VehicleType}
+                onChange={this.handleInputChange}
+                required
+              />
+              <div style={{ fontSize: 15, color: "red" }}>
+                {this.state.VehicleTypeError}
+              </div>
+            </div>
+
+            <div className="form-group" style={{ marginBottom: "15px" }}>
+              <lable style={{ marginBottom: "5px" }}>Destination</lable>
+              <input
+                type="text"
+                className="form-control"
+                name="Destination"
+                placeholder="Enter Destination"
+                value={this.state.Destination}
+                onChange={this.handleInputChange}
+                required
+              />
+              <div style={{ fontSize: 15, color: "red" }}>
+                {this.state.DestinationError}
+              </div>
+            </div>
+
+            <div className="form-group" style={{ marginBottom: "15px" }}>
+              <lable style={{ marginBottom: "5px" }}>Transport Date</lable>
+              <input
+                type="date"
+                className="form-control"
+                name="TransportDate"
+                placeholder="Enter Transpor Date"
+                value={this.state.TransportDate}
+                onChange={this.handleInputChange}
+                min={moment().format("YYYY-MM-DD")}
+                required
+              />
+              <div style={{ fontSize: 15, color: "red" }}>
+                {this.state.TransportDateError}
+              </div>
+            </div>
+
+            <div className="form-group" style={{ marginBottom: "15px" }}>
+              <lable style={{ marginBottom: "5px" }}>Shipment ID</lable>
+              <input
+                type="text"
+                className="form-control"
+                maxlength="6"
+                name="ShipmentID"
+                placeholder="Enter Shipment D"
+                value={this.state.ShipmentID}
+                onChange={this.handleInputChange}
+                required
+              />
+              <div style={{ fontSize: 15, color: "red" }}>
+                {this.state.ShipmentIDError}
+              </div>
+            </div>
+
+            <button
+              className="btn btn-success"
+              type="submit"
+              style={{ marginTop: "15px" }}
+              onClick={this.onSubmit}
+            >
+              <i className="far fa-check-square"></i>
+              &nbsp; Save
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a
-                    style={{ textDecoration: "none", color: "white" }}
-                    class="nav-link"
-                    href="/home"
-                  >
-                    Dashboard
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    style={{ textDecoration: "none", color: "white" }}
-                    class="nav-link"
-                    href="/addtr"
-                  >
-                    {" "}
-                    &#62; Add TR Details <span class="sr-only">
-                      (current)
-                    </span>{" "}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <hr />
-
-          <div className="form-group" style={{ marginBottom: "15px" }}>
-            <lable style={{ marginBottom: "5px" }}>Transport ID</lable>
-            <input
-              type="text"
-              className="form-control"
-              maxlength="5"
-              name="TransportID"
-              placeholder="Enter Transport ID"
-              value={this.state.TransportID}
-              onChange={this.handleInputChange}
-              required
-            />
-            <div style={{ fontSize: 15, color: "red" }}>
-              {this.state.TransportIDError}
-            </div>
-          </div>
-
-          <div className="form-group" style={{ marginBottom: "15px" }}>
-            <lable style={{ marginBottom: "5px" }}>Vehicle ID</lable>
-            <input
-              type="text"
-              className="form-control"
-              maxlength="8"
-              name="VehicleID"
-              placeholder="Enter Vehicle ID"
-              value={this.state.VehicleID}
-              onChange={this.handleInputChange}
-              required
-            />
-            <div style={{ fontSize: 15, color: "red" }}>
-              {this.state.VehicleIDError}
-            </div>
-          </div>
-
-          <div className="form-group" style={{ marginBottom: "15px" }}>
-            <lable style={{ marginBottom: "5px" }}>Vehicle Type</lable>
-            <input
-              type="text"
-              className="form-control"
-              name="VehicleType"
-              placeholder="Enter Vehicle Type"
-              value={this.state.VehicleType}
-              onChange={this.handleInputChange}
-              required
-            />
-            <div style={{ fontSize: 15, color: "red" }}>
-              {this.state.VehicleTypeError}
-            </div>
-          </div>
-
-          <div className="form-group" style={{ marginBottom: "15px" }}>
-            <lable style={{ marginBottom: "5px" }}>Destination</lable>
-            <input
-              type="text"
-              className="form-control"
-              name="Destination"
-              placeholder="Enter Destination"
-              value={this.state.Destination}
-              onChange={this.handleInputChange}
-              required
-            />
-            <div style={{ fontSize: 15, color: "red" }}>
-              {this.state.DestinationError}
-            </div>
-          </div>
-
-          <div className="form-group" style={{ marginBottom: "15px" }}>
-            <lable style={{ marginBottom: "5px" }}>Transport Date</lable>
-            <input
-              type="date"
-              className="form-control"
-              name="TransportDate"
-              placeholder="Enter Transpor Date"
-              value={this.state.TransportDate}
-              onChange={this.handleInputChange}
-              min={moment().format("YYYY-MM-DD")}
-              required
-            />
-            <div style={{ fontSize: 15, color: "red" }}>
-              {this.state.TransportDateError}
-            </div>
-          </div>
-
-          <div className="form-group" style={{ marginBottom: "15px" }}>
-            <lable style={{ marginBottom: "5px" }}>Shipment ID</lable>
-            <input
-              type="text"
-              className="form-control"
-              maxlength="6"
-              name="ShipmentID"
-              placeholder="Enter Shipment D"
-              value={this.state.ShipmentID}
-              onChange={this.handleInputChange}
-              required
-            />
-            <div style={{ fontSize: 15, color: "red" }}>
-              {this.state.ShipmentIDError}
-            </div>
-          </div>
-
+          </form>
+          <br />
           <button
-            className="btn btn-success"
             type="submit"
-            style={{ marginTop: "15px" }}
-            onClick={this.onSubmit}
+            className="btn btn-dark"
+            style={{ backgroundColor: "#2D5F97" }}
+            onClick={this.btnDemo}
           >
-            <i className="far fa-check-square"></i>
-            &nbsp; Save
+            Demo
           </button>
-        </form>
-        <br />
-        <button
-          type="submit"
-          className="btn btn-dark"
-          style={{ backgroundColor: "#2D5F97" }}
-          onClick={this.btnDemo}
-        >
-          Demo
-        </button>
-        &nbsp;
-        <button
-          type="submit"
-          className="btn btn-dark"
-          style={{ backgroundColor: "#2D5F97" }}
-          onClick={this.btnClear}
-        >
-          Clear
-        </button>
-        {/* Footer Section */}
-        {/* <div class="footer">
+          &nbsp;
+          <button
+            type="submit"
+            className="btn btn-dark"
+            style={{ backgroundColor: "#2D5F97" }}
+            onClick={this.btnClear}
+          >
+            Clear
+          </button>
+          {/* Footer Section */}
+          {/* <div class="footer">
           <div class="contain">
             <br />
             <div class="col">
@@ -433,7 +433,7 @@ export default class CreateTransport extends Component {
             <div class="clearfix"></div>
           </div>
         </div> */}
-      </div>
+        </div>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "../axiosConfig";
 import Footer from "./Footer";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 class CreatePosted extends Component {
   constructor(props) {
@@ -14,108 +14,94 @@ class CreatePosted extends Component {
       Qty: "",
       Type: "",
       Description: "",
+      ProductIDError: "",
+      ShipmentIDError: "",
+      DateError: "",
+      UnitPriceError: "",
+      QtyError: "",
+      TypeError: "",
+      DescriptionError: "",
     };
   }
 
   handleInputChange = (e) => {
     const { name, value } = e.target;
     this.setState({
-      ...this.state,
       [name]: value,
+      [`${name}Error`]: "",
     });
   };
 
-  handleDateInputChange = (e) => {
-    const { value } = e.target;
-    this.setState({
-      ...this.state,
-      Date: value,
-    });
-  };
-
-  //validation
+  // Validation method
   validate = () => {
-    let ProductIDError = "";
-    let ShipmentIDError = "";
-    let DateError = "";
-    let UnitPriceError = "";
-    let QtyError = "";
-    let TypeError = "";
-    let DescriptionError = "";
+    let isValid = true;
+    const errors = {};
 
-    if (!this.state.ProductID) {
-      ProductIDError = "*ProductID is Required!";
+    if (!this.state.ProductID.trim()) {
+      errors.ProductIDError = "*ProductID is required!";
+      isValid = false;
     }
 
-    if (!this.state.ShipmentID) {
-      ShipmentIDError = "*ShipmentID  is Required!";
+    if (!this.state.ShipmentID.trim()) {
+      errors.ShipmentIDError = "*ShipmentID is required!";
+      isValid = false;
     }
+
     if (!this.state.Date) {
-      DateError = "*Date is Required";
-    }
-    if (!this.state.UnitPrice) {
-      UnitPriceError = "*UnitPrice is Required";
-    }
-
-    if (!this.state.Qty) {
-      QtyError = "*Qty is Required";
-    }
-
-    if (!this.state.Type) {
-      TypeError = "*Type is Required";
-    }
-
-    if (!this.state.Description) {
-      DescriptionError = "*Description is Required";
+      errors.DateError = "*Date is required!";
+      isValid = false;
     }
 
     if (
-      ProductIDError ||
-      ShipmentIDError ||
-      DateError ||
-      UnitPriceError ||
-      QtyError ||
-      TypeError ||
-      DescriptionError
+      !this.state.UnitPrice ||
+      isNaN(this.state.UnitPrice) ||
+      Number(this.state.UnitPrice) <= 0
     ) {
-      this.setState({
-        ProductIDError,
-        ShipmentIDError,
-        DateError,
-        UnitPriceError,
-        QtyError,
-        TypeError,
-        DescriptionError,
-      });
-      return false;
+      errors.UnitPriceError = "*Valid UnitPrice is required!";
+      isValid = false;
     }
 
-    return true;
+    if (
+      !this.state.Qty ||
+      isNaN(this.state.Qty) ||
+      Number(this.state.Qty) <= 0
+    ) {
+      errors.QtyError = "*Valid Quantity is required!";
+      isValid = false;
+    }
+
+    if (!this.state.Type.trim()) {
+      errors.TypeError = "*Type is required!";
+      isValid = false;
+    }
+
+    if (!this.state.Description.trim()) {
+      errors.DescriptionError = "*Description is required!";
+      isValid = false;
+    }
+
+    this.setState(errors);
+    return isValid;
   };
-  //onsubmit method
+
   onSubmit = (e) => {
     e.preventDefault();
-    const isValid = this.validate();
-    const { ProductID, ShipmentID, Date, UnitPrice, Qty, Type, Description } =
-      this.state;
+    if (this.validate()) {
+      const { ProductID, ShipmentID, Date, UnitPrice, Qty, Type, Description } =
+        this.state;
+      const data = {
+        ProductID,
+        ShipmentID,
+        Date,
+        UnitPrice,
+        Qty,
+        Type,
+        Description,
+      };
 
-    const data = {
-      ProductID: ProductID,
-      ShipmentID: ShipmentID,
-      Date: Date,
-      UnitPrice: UnitPrice,
-      Qty: Qty,
-      Type: Type,
-      Description: Description,
-    };
-    //if validation succussesfully pass
-    if (isValid) {
-      console.log(data);
-      //Put data to back end using the Http link
       axios.post("/export-details/save", data).then((res) => {
         if (res.data.success) {
-          Swal.fire('Added','Added Successfully','success')
-          //alert("Export Details Saved Successfully");
+          Swal.fire("Added", "Export details added successfully!", "success");
           this.setState({
             ProductID: "",
             ShipmentID: "",
@@ -124,65 +110,84 @@ class CreatePosted extends Component {
             Qty: "",
             Type: "",
             Description: "",
+            ProductIDError: "",
+            ShipmentIDError: "",
+            DateError: "",
+            UnitPriceError: "",
+            QtyError: "",
+            TypeError: "",
+            DescriptionError: "",
           });
         }
       });
     }
   };
 
-  /*onSubmit = (e) => {
-
-    e.preventDefault();
-
-    
-    const { ProductID, Date, UnitPrice, Qty, Type, Description} =
-      this.state;
-    const data = {
-      ProductID: ProductID,
-      // ShipmentID: ShipmentID,
-      Date: Date,
-      UnitPrice: UnitPrice,
-      Qty: Qty,
-      Type: Type,
-      Description: Description,
-    };
-
-    
-
-    
-    console.log(data);
-
-    axios.post("/export-details/save", data).then((res) => {
-      if (res.data.success) {
-        this.setState({
-          ProductID: "",
-          ShipmentID: "",
-          Date: "",
-          UnitPrice: "",
-          Qty: "",
-          Type: "",
-          Description: "",
-        });
-      } else {
-        alert("Check the deails");
-      }
-    });
-  
-}*/
-
   render() {
     return (
       <div id="wrapper" className="toggled">
+        <nav
+          className="navbar navbar-expand-lg rounded-3"
+          style={{ backgroundColor: "#006a4e", marginTop: "20px" }}
+        >
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                <a
+                  style={{ textDecoration: "none", color: "white" }}
+                  className="nav-link"
+                  href="/home"
+                >
+                  Dashboard
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  style={{ textDecoration: "none", color: "white" }}
+                  className="nav-link"
+                  href="/expDash"
+                >
+                  &gt; Export Details
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  style={{ textDecoration: "none", color: "white" }}
+                  className="nav-link"
+                  href="/addexp"
+                >
+                  &gt; Add Export Details
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
         <div id="page-content-wrapper">
-          <div className="container-fluid">
-            <div className="col-md-8 mt-4 mx-auto">
-              
-              <h1 className="h3 mb-3 font-weight-nomal">
+          <div className="container-fluid" style={{ paddingLeft: "40px" }}>
+            <div className="col-md-8 mt-4">
+              <h1 className="h3 mb-3 font-weight-normal">
                 Create Export Details
               </h1>
-              <form className="needs-validation" noValidate>
+              <form
+                className="needs-validation"
+                noValidate
+                onSubmit={this.onSubmit}
+              >
+                {/* ProductID */}
                 <div className="form-group" style={{ marginBottom: "15px" }}>
-                  <label style={{ marginBottom: "5px" }}>Product ID</label>
+                  <label>Product ID</label>
                   <input
                     type="text"
                     className="form-control"
@@ -197,13 +202,14 @@ class CreatePosted extends Component {
                   </div>
                 </div>
 
+                {/* ShipmentID */}
                 <div className="form-group" style={{ marginBottom: "15px" }}>
-                  <label style={{ marginBottom: "5px" }}>Shipment ID</label>
+                  <label>Shipment ID</label>
                   <input
                     type="text"
                     className="form-control"
                     name="ShipmentID"
-                    placeholder="ShipmentID"
+                    placeholder="Enter ShipmentID"
                     value={this.state.ShipmentID}
                     onChange={this.handleInputChange}
                     required
@@ -213,26 +219,27 @@ class CreatePosted extends Component {
                   </div>
                 </div>
 
+                {/* Date */}
                 <div className="form-group" style={{ marginBottom: "15px" }}>
-                  <label style={{ marginBottom: "5px" }}>Date</label>
+                  <label>Date</label>
                   <input
                     type="date"
                     className="form-control"
-                    name="requirment1"
-                    placeholder="Date"
+                    name="Date"
                     value={this.state.Date}
-                    onChange={this.handleDateInputChange}
+                    onChange={this.handleInputChange}
                     required
                   />
                   <div style={{ fontSize: 15, color: "red" }}>
-                    {this.state.ShipmentIDError}
+                    {this.state.DateError}
                   </div>
                 </div>
 
+                {/* UnitPrice */}
                 <div className="form-group" style={{ marginBottom: "15px" }}>
-                  <label style={{ marginBottom: "5px" }}>Unit Price</label>
+                  <label>Unit Price</label>
                   <input
-                    type="string"
+                    type="number"
                     className="form-control"
                     name="UnitPrice"
                     placeholder="Enter UnitPrice"
@@ -245,16 +252,14 @@ class CreatePosted extends Component {
                   </div>
                 </div>
 
+                {/* Qty */}
                 <div className="form-group" style={{ marginBottom: "15px" }}>
-                  <label style={{ marginBottom: "5px" }}>Qty</label>
+                  <label>Quantity</label>
                   <input
-                    type="text"
-                    min="0"
-                    max="100"
-                    step="1"
+                    type="number"
                     className="form-control"
                     name="Qty"
-                    placeholder="Enter Qty"
+                    placeholder="Enter Quantity"
                     value={this.state.Qty}
                     onChange={this.handleInputChange}
                     required
@@ -264,8 +269,9 @@ class CreatePosted extends Component {
                   </div>
                 </div>
 
+                {/* Type */}
                 <div className="form-group" style={{ marginBottom: "15px" }}>
-                  <label style={{ marginBottom: "5px" }}>Type</label>
+                  <label>Type</label>
                   <input
                     type="text"
                     className="form-control"
@@ -280,8 +286,9 @@ class CreatePosted extends Component {
                   </div>
                 </div>
 
+                {/* Description */}
                 <div className="form-group" style={{ marginBottom: "15px" }}>
-                  <label style={{ marginBottom: "5px" }}>Description</label>
+                  <label>Description</label>
                   <input
                     type="text"
                     className="form-control"
@@ -300,10 +307,8 @@ class CreatePosted extends Component {
                   className="btn btn-success"
                   type="submit"
                   style={{ marginTop: "15px" }}
-                  onClick={this.onSubmit}
                 >
-                  <i className="far fa-check-square"></i>
-                  &nbsp; Save
+                  <i className="far fa-check-square"></i>&nbsp; Save
                 </button>
               </form>
             </div>
