@@ -176,7 +176,7 @@ export default class RequestList extends Component {
                 href="/reqadd"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                Create a New Customer Request
+                Create NeW Request
               </a>
             </button>
           </div>
