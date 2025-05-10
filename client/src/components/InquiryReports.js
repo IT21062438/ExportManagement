@@ -101,16 +101,13 @@ export default class InquiryReports extends Component {
                   Dashboard
                 </a>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <a
                   style={{ textDecoration: "none", color: "white" }}
-                  class="nav-link"
+                  className="nav-link"
                   href="/inqrep"
                 >
-                  {" "}
-                  &#62; Inquiry Reports<span class="sr-only">
-                    (current)
-                  </span>{" "}
+                  &gt; Inquiry Reports<span className="sr-only">(current)</span>
                 </a>
               </li>
             </ul>

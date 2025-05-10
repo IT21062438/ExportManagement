@@ -6,18 +6,37 @@ import ReactHtmlTableToExcel from "react-html-table-to-excel";
 
 const generatePDF = (requests) => {
   const doc = new jsPDF();
-  const tableColumn = ["Request ID", "Customer Name", "Date", "Product Name"];
+  const tableColumn = [
+    "Request ID",
+    "Customer Name",
+    "Date",
+    "Category",
+    "Product Name",
+    "Net Weight(Kg)",
+    "Package Qty",
+  ];
   const tableRows = [];
 
-  requests.map((requests) => {
-    const requestsData = [
-      requests.requestID,
-      requests.customerName,
-      requests.date,
-      requests.productName,
+  requests.forEach((request) => {
+    const formattedDate = (() => {
+      const date = new Date(request.date);
+      const dd = String(date.getDate()).padStart(2, "0");
+      const mm = String(date.getMonth() + 1).padStart(2, "0");
+      const yyyy = date.getFullYear();
+      return `${dd}/${mm}/${yyyy}`;
+    })();
+
+    const requestData = [
+      request.requestID,
+      request.customerName,
+      formattedDate,
+      request.category,
+      request.productName,
+      request.netWeight,
+      request.packageQty,
     ];
 
-    tableRows.push(requestsData);
+    tableRows.push(requestData);
   });
 
   doc.text("Ceylon Exports", 70, 8).setFontSize(13);
