@@ -35,7 +35,7 @@ const generatePDF = (exportDetails) => {
     styles: { fontSize: 8 },
     startY: 35,
   });
-  doc.save("ExportDetailsSUMMARY.pdf");
+  doc.save("ExportDetailsSummary.pdf");
 };
 
 export default class exportDetailsRep extends Component {
