@@ -123,7 +123,7 @@ class NavBar extends Component {
                   <a href="/homeqc" className="dropdown-item">
                     <i className="fas fa-chart-line me-2"></i>QC Dashboard
                   </a>
-                  <a href="/add" className="dropdown-item">
+                  <a href="/addqc" className="dropdown-item">
                     <i className="fas fa-plus-circle me-2"></i>QC Card
                   </a>
                 </div>

@@ -39,11 +39,23 @@ const generatePDF = (requests) => {
     tableRows.push(requestData);
   });
 
-  doc.text("Ceylon Exports", 70, 8).setFontSize(13);
-  doc.text("Requests Summary", 14, 16).setFontSize(13);
+  
+
+  doc.setFontSize(16);
+   doc.setTextColor(0, 0, 0);
+   doc.text("Ceylon Exports", 105, 10, { align: 'center' });
+   
+   doc.setFontSize(12);
+  doc.text("Requests Summary", 105, 18, { align: 'center' });
+  
   doc.autoTable(tableColumn, tableRows, {
     styles: { fontSize: 8 },
     startY: 35,
+    headStyles: {
+      fillColor: [14, 54, 98], 
+      textColor: 255,          
+      fontStyle: 'bold'        
+    }
   });
   doc.save("RequestsSummary.pdf");
 };

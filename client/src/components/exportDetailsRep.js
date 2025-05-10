@@ -29,11 +29,24 @@ const generatePDF = (exportDetails) => {
     ];
     tableRows.push(exportData);
   });
-  doc.text("Ceylon Exports", 70, 8).setFontSize(13);
-  doc.text("Export Details Summary", 14, 16).setFontSize(13);
+
+  // Add header
+  doc.setFontSize(16);
+  doc.setTextColor(0, 0, 0);
+  doc.text("Ceylon Exports", 105, 10, { align: 'center' });
+  
+  doc.setFontSize(12);
+  doc.text("Export Details Summary", 105, 18, { align: 'center' });
+
+  
   doc.autoTable(tableColumn, tableRows, {
     styles: { fontSize: 8 },
     startY: 35,
+    headStyles: {
+      fillColor: [14, 54, 98], 
+      textColor: 255,          
+      fontStyle: 'bold'        
+    }
   });
   doc.save("ExportDetailsSummary.pdf");
 };

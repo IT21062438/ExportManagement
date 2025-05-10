@@ -31,12 +31,24 @@ const generatePDF = (inventory) => {
     ];
     tableRows.push(inventorydata);
   });
-  doc.text("Ceylon Exports", 70, 8).setFontSize(13);
-  doc.text("INVENTORY SUMMURY", 14, 16).setFontSize(13);
+
+  doc.setFontSize(16);
+  doc.setTextColor(0, 0, 0);
+  doc.text("Ceylon Exports", 105, 10, { align: "center" });
+
+  doc.setFontSize(12);
+  doc.text("Inventory Summary", 105, 18, { align: "center" });
+
   doc.autoTable(tableColumn, tableRows, {
     styles: { fontSize: 8 },
     startY: 35,
+    headStyles: {
+      fillColor: [14, 54, 98],
+      textColor: 255,
+      fontStyle: "bold",
+    },
   });
+
   doc.save("INVENTORYSUMMARY.pdf");
 };
 
@@ -129,7 +141,7 @@ export default class inventoryRep extends Component {
                       class="nav-link"
                       href="/intrep"
                     >
-                    &#62; Inventory Reports
+                      &#62; Inventory Reports
                     </a>
                   </li>
                 </ul>
@@ -270,23 +282,29 @@ export default class inventoryRep extends Component {
                       <td>{inventory.cusID}</td>
                       <td>{inventory.proName}</td>
                       <td>
-                      {(() => {
-                        const date = new Date(inventory.stockedDate);
-                        const dd = String(date.getDate()).padStart(2, "0");
-                        const mm = String(date.getMonth() + 1).padStart(2, "0");
-                        const yyyy = date.getFullYear();
-                        return `${dd}/${mm}/${yyyy}`;
-                      })()}
+                        {(() => {
+                          const date = new Date(inventory.stockedDate);
+                          const dd = String(date.getDate()).padStart(2, "0");
+                          const mm = String(date.getMonth() + 1).padStart(
+                            2,
+                            "0"
+                          );
+                          const yyyy = date.getFullYear();
+                          return `${dd}/${mm}/${yyyy}`;
+                        })()}
                       </td>
                       <td>
-                      {(() => {
-                        const date = new Date(inventory.scheduledDate);
-                        const dd = String(date.getDate()).padStart(2, "0");
-                        const mm = String(date.getMonth() + 1).padStart(2, "0");
-                        const yyyy = date.getFullYear();
-                        return `${dd}/${mm}/${yyyy}`;
-                      })()}
-                    </td>
+                        {(() => {
+                          const date = new Date(inventory.scheduledDate);
+                          const dd = String(date.getDate()).padStart(2, "0");
+                          const mm = String(date.getMonth() + 1).padStart(
+                            2,
+                            "0"
+                          );
+                          const yyyy = date.getFullYear();
+                          return `${dd}/${mm}/${yyyy}`;
+                        })()}
+                      </td>
                       <td>{inventory.category}</td>
                       <td>{inventory.qty}</td>
                       <td>{inventory.price}</td>
