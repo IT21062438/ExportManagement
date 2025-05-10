@@ -167,205 +167,204 @@ export default class EditPostQC extends Component {
     return (
       //component organizer
       <div className="content" style={{ paddingLeft: "70px" }}>
-      <div className="col-md-8 mt-4 mx-auto">
-        <h1 className="h3 mb-3 font-weight-nomal">Update QC details</h1>
-
-        {/* custom navigation        */}
-        <nav
-          class="navbar navbar-expand-lg rounded-3"
-          style={{ backgroundColor: "#006a4e" }}
-        >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+        <div className="col-md-8 mt-4 mx-auto">
+          {/* custom navigation        */}
+          <nav
+            class="navbar navbar-expand-lg rounded-3"
+            style={{ backgroundColor: "#006a4e" }}
           >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a
-                  style={{ textDecoration: "none", color: "white" }}
-                  class="nav-link"
-                  href="/"
-                >
-                  QC Details
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  style={{ textDecoration: "none", color: "white" }}
-                  class="nav-link"
-                  href=""
-                >
-                  {" "}
-                  &#62; Update/Edit Details{" "}
-                  <span class="sr-only">(current)</span>{" "}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <hr />
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    class="nav-link"
+                    href="/homeqc"
+                  >
+                    QC Details
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    class="nav-link"
+                    href=""
+                  >
+                    {" "}
+                    &#62; Edit Details <span class="sr-only">
+                      (current)
+                    </span>{" "}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <hr />
+          <h1 className="h3 mb-3 font-weight-nomal">Update QC Details</h1>
+          {/* Edit form */}
+          <form className="needs-validation" noValidate>
+            <div class="row">
+              <div class="col">
+                <lable style={{ marginBottom: "5px" }}>Product ID</lable>
+                <input
+                  type="text"
+                  class="form-control"
+                  maxlength="6"
+                  name="ProductID"
+                  placeholder="Enter Product ID"
+                  value={this.state.ProductID}
+                  onChange={this.handleInputChange}
+                  required
+                />
+                <div style={{ fontSize: 15, color: "red" }}>
+                  {this.state.ProductIDError}
+                </div>
+              </div>
 
-        {/* Edit form */}
-        <form className="needs-validation" noValidate>
-          <div class="row">
-            <div class="col">
-              <lable style={{ marginBottom: "5px" }}>Product ID</lable>
-              <input
-                type="text"
-                class="form-control"
-                maxlength="6"
-                name="ProductID"
-                placeholder="Enter Product ID"
-                value={this.state.ProductID}
-                onChange={this.handleInputChange}
-                required
-              />
-              <div style={{ fontSize: 15, color: "red" }}>
-                {this.state.ProductIDError}
+              <div class="col">
+                <lable style={{ marginBottom: "5px" }}>Buyer ID</lable>
+                <input
+                  type="text"
+                  class="form-control"
+                  maxlength="6"
+                  name="BuyerID"
+                  placeholder="Enter Buyer ID"
+                  value={this.state.BuyerID}
+                  onChange={this.handleInputChange}
+                  required
+                />
+                <div style={{ fontSize: 15, color: "red" }}>
+                  {this.state.BuyerIDError}
+                </div>
               </div>
             </div>
 
-            <div class="col">
-              <lable style={{ marginBottom: "5px" }}>Buyer ID</lable>
-              <input
-                type="text"
-                class="form-control"
-                maxlength="6"
-                name="BuyerID"
-                placeholder="Enter Buyer ID"
-                value={this.state.BuyerID}
-                onChange={this.handleInputChange}
-                required
-              />
-              <div style={{ fontSize: 15, color: "red" }}>
-                {this.state.BuyerIDError}
+            <div class="row">
+              <div class="col">
+                <lable style={{ marginBottom: "5px" }}>Product Type</lable>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="ProductType"
+                  placeholder="Enter Product Type"
+                  value={this.state.ProductType}
+                  onChange={this.handleInputChange}
+                  required
+                />
+                <div style={{ fontSize: 15, color: "red" }}>
+                  {this.state.ProductTypeError}
+                </div>
+              </div>
+
+              <div class="col">
+                <lable style={{ marginBottom: "5px" }}>QTY</lable>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="QTY"
+                  placeholder="Enter Qantity of the Product"
+                  value={this.state.QTY}
+                  onChange={this.handleInputChange}
+                  required
+                />
+                <div style={{ fontSize: 15, color: "red" }}>
+                  {this.state.QTYError}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="col">
-              <lable style={{ marginBottom: "5px" }}>Product Type</lable>
-              <input
-                type="text"
-                class="form-control"
-                name="ProductType"
-                placeholder="Enter Product Type"
-                value={this.state.ProductType}
-                onChange={this.handleInputChange}
-                required
-              />
-              <div style={{ fontSize: 15, color: "red" }}>
-                {this.state.ProductTypeError}
+            <div class="row">
+              <div class="col">
+                <lable style={{ marginBottom: "5px" }}>Checked Date</lable>
+                <input
+                  type="date"
+                  className="form-control"
+                  name="CheckedDate"
+                  placeholder="Enter Checked Date"
+                  value={this.state.CheckedDate}
+                  onChange={this.handleInputChange}
+                  max={moment().format("YYYY-MM-DD")}
+                  required
+                />
+                <div style={{ fontSize: 15, color: "red" }}>
+                  {this.state.CheckedDateError}
+                </div>
+              </div>
+
+              <div class="col">
+                <lable style={{ marginBottom: "5px" }}>
+                  Requirement Satisfication
+                </lable>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="RequirementSatisfication"
+                  placeholder="Enter Requirement Satisfication"
+                  value={this.state.RequirementSatisfication}
+                  onChange={this.handleInputChange}
+                  required
+                />
+                <div style={{ fontSize: 15, color: "red" }}>
+                  {this.state.RequirementSatisficationError}
+                </div>
               </div>
             </div>
 
-            <div class="col">
-              <lable style={{ marginBottom: "5px" }}>QTY</lable>
-              <input
-                type="text"
-                class="form-control"
-                name="QTY"
-                placeholder="Enter Qantity of the Product"
-                value={this.state.QTY}
-                onChange={this.handleInputChange}
-                required
-              />
-              <div style={{ fontSize: 15, color: "red" }}>
-                {this.state.QTYError}
+            <div class="row">
+              <div class="col">
+                <lable style={{ marginBottom: "5px" }}>Quality Rate</lable>
+                <input
+                  type="number"
+                  min="0"
+                  max="100"
+                  step="1"
+                  className="form-control"
+                  name="QualityRate"
+                  placeholder="Enter Quality"
+                  value={this.state.QualityRate}
+                  onChange={this.handleInputChange}
+                  required
+                />
+                <div style={{ fontSize: 15, color: "red" }}>
+                  {this.state.QualityRateError}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="col">
-              <lable style={{ marginBottom: "5px" }}>Checked Date</lable>
+            <div className="form-group" style={{ marginBottom: "15px" }}>
+              <lable style={{ marginBottom: "5px" }}>Description</lable>
               <input
-                type="date"
+                type="text"
                 className="form-control"
-                name="CheckedDate"
-                placeholder="Enter Checked Date"
-                value={this.state.CheckedDate}
+                name="Description"
+                placeholder="Enter Description"
+                value={this.state.Description}
                 onChange={this.handleInputChange}
-                max={moment().format("YYYY-MM-DD")}
-                required
               />
-              <div style={{ fontSize: 15, color: "red" }}>
-                {this.state.CheckedDateError}
-              </div>
             </div>
 
-            <div class="col">
-              <lable style={{ marginBottom: "5px" }}>
-                Requirement Satisfication
-              </lable>
-              <input
-                type="text"
-                className="form-control"
-                name="RequirementSatisfication"
-                placeholder="Enter Requirement Satisfication"
-                value={this.state.RequirementSatisfication}
-                onChange={this.handleInputChange}
-                required
-              />
-              <div style={{ fontSize: 15, color: "red" }}>
-                {this.state.RequirementSatisficationError}
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <lable style={{ marginBottom: "5px" }}>Quality Rate</lable>
-              <input
-                type="number"
-                min="0"
-                max="100"
-                step="1"
-                className="form-control"
-                name="QualityRate"
-                placeholder="Enter Quality"
-                value={this.state.QualityRate}
-                onChange={this.handleInputChange}
-                required
-              />
-              <div style={{ fontSize: 15, color: "red" }}>
-                {this.state.QualityRateError}
-              </div>
-            </div>
-          </div>
-
-          <div className="form-group" style={{ marginBottom: "15px" }}>
-            <lable style={{ marginBottom: "5px" }}>Description</lable>
-            <input
-              type="text"
-              className="form-control"
-              name="Description"
-              placeholder="Enter Description"
-              value={this.state.Description}
-              onChange={this.handleInputChange}
-            />
-          </div>
-
-          <button
-            className="btn btn-success"
-            type="submit"
-            style={{ marginTop: "15px" }}
-            onClick={this.onSubmit}
-          >
-            <i className="far fa-check-square"></i>
-            &nbsp; Update
-          </button>
-        </form>
-      </div>
+            <button
+              className="btn btn-success"
+              type="submit"
+              style={{ marginTop: "15px" }}
+              onClick={this.onSubmit}
+            >
+              <i className="far fa-check-square"></i>
+              &nbsp; Update
+            </button>
+          </form>
+        </div>
       </div>
     );
   }

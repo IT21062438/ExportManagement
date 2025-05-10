@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 export default class HomeQC extends Component {
   //Binding event handler method
-  constructor(props) { 
+  constructor(props) {
     super(props);
 
     //Initializing local state by assigning an object to this.state
@@ -46,7 +46,10 @@ export default class HomeQC extends Component {
         postsQC.ProductID.toLowerCase().includes(searchKey) ||
         postsQC.BuyerID.toLowerCase().includes(searchKey) ||
         postsQC.ProductType.toLowerCase().includes(searchKey) ||
-        postsQC.RequirementSatisfication.toLowerCase().includes(searchKey)
+        postsQC.RequirementSatisfication.toLowerCase().includes(searchKey) ||
+        postsQC.QualityRate.toString().includes(searchKey) ||
+        postsQC.QTY.toString().includes(searchKey) ||
+        postsQC.Description.toLowerCase().includes(searchKey)
     );
     this.setState({ postsQC: result });
   }
@@ -69,8 +72,6 @@ export default class HomeQC extends Component {
       <div id="wrapper" className="toggled">
         <div style={{ backgroundColor: "#e3dac9" }} id="page-content-wrapper">
           <div className="container-fluid"></div>
-
-          {/*<div className="row">*/}
 
           {/* custom navigation        */}
           <nav
@@ -140,7 +141,7 @@ export default class HomeQC extends Component {
             style={{ backgroundColor: "#0E3662" }}
           >
             <a href="/addqc" style={{ textDecoration: "none", color: "white" }}>
-              Add&nbsp;
+              Add New QC&nbsp;
               <i class="fas fa-plus-circle"></i>
             </a>
           </button>
@@ -191,27 +192,41 @@ export default class HomeQC extends Component {
                   <td>{postsQC.BuyerID}</td>
                   <td>{postsQC.ProductType}</td>
                   <td>{postsQC.QTY}</td>
-                  <td>{postsQC.CheckedDate}</td>
+                  <td>
+                    {(() => {
+                      const date = new Date(postsQC.CheckedDate);
+                      const dd = String(date.getDate()).padStart(2, "0");
+                      const mm = String(date.getMonth() + 1).padStart(2, "0");
+                      const yyyy = date.getFullYear();
+                      return `${dd}/${mm}/${yyyy}`;
+                    })()}
+                  </td>
+
                   <td>{postsQC.RequirementSatisfication}</td>
                   <td>{postsQC.QualityRate}</td>
                   <td>{postsQC.Description}</td>
 
-                  <td>
+                  <td style={{ whiteSpace: "nowrap" }}>
                     {/* Edit button */}
                     <a
                       style={{
                         backgroundColor: "#0E3662",
                         textDecoration: "none",
                         color: "white",
+                        marginRight: "5px",
+                        display: "inline-block",
                       }}
                       className="btn btn-warning"
                       href={`/qcedit/${postsQC._id}`}
                     >
                       <i className="fas fa-edit"></i>&nbsp;Edit
                     </a>
-                    &nbsp;
+
                     {/* Delete Button */}
                     <a
+                      style={{
+                        display: "inline-block",
+                      }}
                       className="btn btn-danger"
                       href="#"
                       onClick={() => this.onDelete(postsQC._id)}
