@@ -30,7 +30,7 @@ const generatePDF = (exportDetails) => {
     tableRows.push(exportData);
   });
   doc.text("Ceylon Exports", 70, 8).setFontSize(13);
-  doc.text("Export Details SUMMURY", 14, 16).setFontSize(13);
+  doc.text("Export Details Summary", 14, 16).setFontSize(13);
   doc.autoTable(tableColumn, tableRows, {
     styles: { fontSize: 8 },
     startY: 35,
