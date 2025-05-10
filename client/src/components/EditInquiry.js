@@ -156,10 +156,62 @@ export default class EditInquiry extends Component {
   render() {
     return (
       <div id='wrapper' className='toggled'>
-      <div id="page-content-wrapper">
-      <div className='container-fluid'>
+        <div id="page-content-wrapper">
+          {/* custom navigation        */}
+          <nav
+            class="navbar navbar-expand-lg rounded-3"
+            style={{ backgroundColor: "#006a4e" }}
+          >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    class="nav-link"
+                    href="/home"
+                  >
+                    Dashboard
+                  </a>
+                </li>
+                <li class="nav-item active">
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    class="nav-link"
+                    href="/inquiries"
+                  >
+                    &#62; Inquiry Details
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    class="nav-link"
+                    href="/inqedit/:id"
+                  >
+                    {" "}
+                    &#62; Edit Inquiry <span class="sr-only">
+                      (current)
+                    </span>{" "}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <hr />
+      <div className='container-fluid' style={{ paddingLeft: "40px" }}>
 
-      <div className='col-md-8 mt-4 mx-auto'>
+      <div className='col-md-8 mt-4'>
         <h1 className='h3 mb-3 font-weight-normal'>Update Customer Inquiry</h1>
           <form className='needs-validation' noValidate>
 

@@ -161,20 +161,21 @@ export default class RequestList extends Component {
                     <td>{requests.netWeight}</td>
                     <td>{requests.packageQty}</td>
                     <td>
-                      <a
-                        className="btn btn-warning"
-                        href={`/reqedit/${requests._id}`}
-                      >
-                        <i className="fas fa-edit"></i>&nbsp;Edit
-                      </a>
-                      &nbsp;&nbsp;
-                      <a
-                        className="btn btn-danger"
-                        href="#"
-                        onClick={() => this.onDelete(requests._id)}
-                      >
-                        <i className="far fa-trash-alt"></i>&nbsp;Delete
-                      </a>
+                      <div className="d-flex gap-2">
+                        <a
+                          className="btn btn-warning btn-sm"
+                          href={`/reqedit/${requests._id}`}
+                        >
+                          <i className="fas fa-edit"></i>&nbsp;Edit
+                        </a>
+                        <a
+                          className="btn btn-danger btn-sm"
+                          href="#"
+                          onClick={() => this.onDelete(requests._id)}
+                        >
+                          <i className="far fa-trash-alt"></i>&nbsp;Delete
+                        </a>
+                      </div>
                     </td>
                   </tr>
                 ))}
