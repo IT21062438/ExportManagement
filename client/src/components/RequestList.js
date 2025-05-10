@@ -144,7 +144,17 @@ export default class RequestList extends Component {
                         {requests.requestID}
                       </a>
                     </td>
-                    <td>{requests.date}</td>
+
+                    <td>
+                      {(() => {
+                        const date = new Date(requests.date);
+                        const dd = String(date.getDate()).padStart(2, "0");
+                        const mm = String(date.getMonth() + 1).padStart(2, "0");
+                        const yyyy = date.getFullYear();
+                        return `${dd}/${mm}/${yyyy}`;
+                      })()}
+                    </td>
+
                     <td>{requests.customerName}</td>
                     <td>{requests.category}</td>
                     <td>{requests.productName}</td>
@@ -176,7 +186,7 @@ export default class RequestList extends Component {
                 href="/reqadd"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                Create NeW Request
+                Create New Request
               </a>
             </button>
           </div>

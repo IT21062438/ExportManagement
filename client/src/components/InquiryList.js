@@ -40,7 +40,9 @@ export default class InquiryList extends Component {
     const result = inquiries.filter(
       (inquiry) =>
         inquiry.customerName.toLowerCase().includes(searchKey) ||
-        inquiry.inquiryType.toLowerCase().includes(searchKey)
+        inquiry.email.toLowerCase().includes(searchKey) ||
+        inquiry.inquiryType.toLowerCase().includes(searchKey) ||
+        inquiry.description.toLowerCase().includes(searchKey)
     );
     this.setState({ inquiries: result });
   }
@@ -113,7 +115,7 @@ export default class InquiryList extends Component {
               <input
                 className="form-control"
                 type="search"
-                placeholder="Search by entering Customer Name, Inquiry Type"
+                placeholder="Search by entering Customer Name, Email, Inquiry Type, Description"
                 name="searchQuery"
                 onChange={this.handleSearchArea}
               />
@@ -144,7 +146,16 @@ export default class InquiryList extends Component {
                         {inquiries.inquiryID}
                       </a>
                     </td>
-                    <td>{inquiries.date}</td>
+                    <td>
+                      {(() => {
+                        const date = new Date(inquiries.date);
+                        const dd = String(date.getDate()).padStart(2, "0");
+                        const mm = String(date.getMonth() + 1).padStart(2, "0");
+                        const yyyy = date.getFullYear();
+                        return `${dd}/${mm}/${yyyy}`;
+                      })()}
+                    </td>
+
                     <td>{inquiries.customerName}</td>
                     <td>{inquiries.contactNo}</td>
                     <td>{inquiries.email}</td>

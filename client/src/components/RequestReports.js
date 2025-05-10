@@ -57,6 +57,52 @@ export default class RequestReports extends Component {
   render() {
     return (
       <div id="wrapper" className="toggled">
+        {/* custom navigation        */}
+        <nav
+          class="navbar navbar-expand-lg rounded-3"
+          style={{ backgroundColor: "#006a4e", marginTop: "5px" }}
+        >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a
+                  style={{ textDecoration: "none", color: "white" }}
+                  class="nav-link"
+                  href="/home"
+                >
+                  Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  style={{ textDecoration: "none", color: "white" }}
+                  class="nav-link"
+                  href="/reqrep"
+                >
+                  {" "}
+                  &#62; Request Reports<span class="sr-only">
+                    (current)
+                  </span>{" "}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <hr />
+
+        <h4>All Customer Requests</h4>
+
         <div id="page-content-wrapper">
           <ReactHtmlTableToExcel
             id="test-table-xls-button"
@@ -93,7 +139,15 @@ export default class RequestReports extends Component {
                 <tr key={index}>
                   <th scope="row">{index + 1}</th>
                   <td>{requests.requestID}</td>
-                  <td>{requests.date}</td>
+                  <td>
+                    {(() => {
+                      const date = new Date(requests.date);
+                      const dd = String(date.getDate()).padStart(2, "0");
+                      const mm = String(date.getMonth() + 1).padStart(2, "0");
+                      const yyyy = date.getFullYear();
+                      return `${dd}/${mm}/${yyyy}`;
+                    })()}
+                  </td>
                   <td>{requests.customerName}</td>
                   <td>{requests.category}</td>
                   <td>{requests.productName}</td>
