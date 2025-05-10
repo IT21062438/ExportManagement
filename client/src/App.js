@@ -90,7 +90,7 @@ export default class App extends Component {
           <Route path="/addexp" component={CreatePosted}></Route>
           <Route path="/expedit/:id" component={EditPosted}></Route>
           <Route path="/exppost/:id" component={PostedDetails}></Route>
-          <Route path="/exportDeatialRep" component={exportDetailsRep}></Route>
+          <Route path="/exprep" component={exportDetailsRep}></Route>
           <Route path="/buyerReg" exact component={HomePostbr}></Route>
           <Route path="/addPostbr" component={CreatePostbr}></Route>
           <Route path="/editPostbr/:id" component={EditPostbr}></Route>

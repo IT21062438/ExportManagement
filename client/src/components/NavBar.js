@@ -105,8 +105,8 @@ class NavBar extends Component {
                     <i className="fas fa-chart-line me-2"></i>Export Dashboard
                   </a>
                   
-                  <a href="/addexp" className="dropdown-item">
-                    <i className="fas fa-plus-circle me-2"></i>Add Export
+                  <a href="/exprep" className="dropdown-item">
+                    <i className="fas fa-file-alt me-2"></i>Export reports
                   </a>
                 </div>
               </div>

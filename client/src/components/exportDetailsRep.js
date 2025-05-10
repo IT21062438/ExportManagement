@@ -69,7 +69,10 @@ export default class exportDetailsRep extends Component {
     const result = exportDetails.filter(
       (exportDetails) =>
         exportDetails.ProductID.toLowerCase().includes(searchKey) ||
-        exportDetails.ShipmentID.toLowerCase().includes(searchKey)
+        exportDetails.ShipmentID.toLowerCase().includes(searchKey) ||
+        exportDetails.Type.toLowerCase().includes(searchKey.toLowerCase()) ||
+        exportDetails.Description.toLowerCase().includes(searchKey.toLowerCase()) ||
+        exportDetails.Qty.toString().includes(searchKey)
     );
 
     this.setState({ exportDetails: result });
@@ -121,9 +124,9 @@ export default class exportDetailsRep extends Component {
                     <a
                       style={{ textDecoration: "none", color: "white" }}
                       class="nav-link"
-                      href="/exportDeatialRep"
+                      href=" "
                     >
-                      Reports
+                      &#62; Export Reports
                     </a>
                   </li>
                 </ul>

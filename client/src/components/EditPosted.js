@@ -179,8 +179,58 @@ class EditPosted extends Component {
     return (
       <div id="wrapper" className="toggled">
         <div id="page-content-wrapper">
+        <nav
+            className="navbar navbar-expand-lg rounded-3"
+            style={{ backgroundColor: "#006a4e" }}
+          >
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item active">
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    className="nav-link"
+                    href="/home"
+                  >
+                    Dashboard
+                  </a>
+                </li>
+                <li className="nav-item active">
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    className="nav-link"
+                    href="/expDash"
+                  >
+                    &#62; Export Details
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    className="nav-link"
+                    href=""
+                  >
+                    {" "}
+                    &#62; Update Export Details{" "}
+                    <span className="sr-only">(current)</span>{" "}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <hr />
           <div className="container-fluid">
-            <div className="col-md-8 mt-4 mx-auto">
+            <div className="col-md-8 mt-4">
               <h1 className="h3 mb-3 font-weight-nomal">
                 Update Export Details
               </h1>

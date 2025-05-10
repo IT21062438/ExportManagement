@@ -430,7 +430,8 @@ export default class HomePosted extends Component {
         item.ProductID.toLowerCase().includes(searchKey.toLowerCase()) ||
         item.ShipmentID.toLowerCase().includes(searchKey.toLowerCase()) ||
         item.Type.toLowerCase().includes(searchKey.toLowerCase()) ||
-        item.Description.toLowerCase().includes(searchKey.toLowerCase())
+        item.Description.toLowerCase().includes(searchKey.toLowerCase()) ||
+        item.Qty.toString().includes(searchKey)
     );
     this.setState({ exportDetails: result });
   }
@@ -523,20 +524,12 @@ export default class HomePosted extends Component {
               href="/addexp"
               style={{ textDecoration: "none", color: "white" }}
             >
-              Add&nbsp;
+              Add Export&nbsp;
               <i className="fas fa-plus-circle"></i>
             </a>
           </button>
         </div>
 
-        <ReactHTMLTableToExcel
-          id="test-table-xls-button"
-          className="btn btn-info"
-          table="exportTable"
-          filename="Export Details Summary"
-          sheet="tablexls"
-          buttonText="Download As Excel"
-        />
         <div style={{ backgroundColor: "#faf0e6" }}>
           <table
             id="exportTable"
