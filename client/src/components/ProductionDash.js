@@ -42,7 +42,9 @@ export default class ProductionDash extends Component {
       (production) =>
         production.slotName.toLowerCase().includes(searchKey) ||
         production.slotLocation.toLowerCase().includes(searchKey) ||
-        production.category.toLowerCase().includes(searchKey)
+        production.category.toLowerCase().includes(searchKey) ||
+        production.slotManager.toLowerCase().includes(searchKey) 
+      
     );
 
     this.setState({ production: result });

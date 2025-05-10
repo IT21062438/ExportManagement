@@ -67,7 +67,8 @@ export default class ProductionRep extends Component {
         //  material.matID.toLowerCase().includes(searchKey) ||
         production.slotName.toLowerCase().includes(searchKey) ||
         production.slotLocation.toLowerCase().includes(searchKey) ||
-        production.category.toLowerCase().includes(searchKey)
+        production.category.toLowerCase().includes(searchKey) ||
+        production.slotManager.toLowerCase().includes(searchKey)
     );
 
     this.setState({ production: result });
@@ -121,7 +122,7 @@ export default class ProductionRep extends Component {
                       class="nav-link"
                       href="/prorep"
                     >
-                      Reports
+                      &#62; Production Reports
                     </a>
                   </li>
                 </ul>
@@ -133,7 +134,7 @@ export default class ProductionRep extends Component {
                 className="h3 mb-3 font-weight-normal text-info rounded-3 "
                 style={{ backgroundColor: "#0E3662", padding: "10px" }}
               >
-                <b>REPORTS</b>
+                <b>PRODUCTION REPORTS</b>
               </h1>
             </center>
             <hr />

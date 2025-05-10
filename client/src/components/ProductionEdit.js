@@ -288,7 +288,6 @@ export default class ProductionEdit extends Component {
                         name="slotName"
                         placeholder="Enter Slot Name"
                         value={this.state.slotName}
-                        readOnly
                         onChange={this.handleInputChange}
                         required
                       />
@@ -307,7 +306,6 @@ export default class ProductionEdit extends Component {
                         name="slotLocation"
                         placeholder="Enter Slot Location"
                         value={this.state.slotLocation}
-                        readOnly
                         onChange={this.handleInputChange}
                         required
                       />
@@ -328,7 +326,6 @@ export default class ProductionEdit extends Component {
                         name="slotManager"
                         placeholder="Enter Slot Manager"
                         value={this.state.slotManager}
-                        readOnly
                         onChange={this.handleInputChange}
                         required
                       />
