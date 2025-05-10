@@ -26,7 +26,7 @@ const generatePDF = (production) => {
     tableRows.push(productiondata);
   });
   doc.text("Ceylon Exports", 70, 8).setFontSize(13);
-  doc.text("SLOT SUMMURY", 14, 16).setFontSize(13);
+  doc.text("SLOT SUMMARY", 14, 16).setFontSize(13);
   doc.autoTable(tableColumn, tableRows, {
     styles: { fontSize: 8 },
     startY: 35,
@@ -212,7 +212,7 @@ export default class ProductionRep extends Component {
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
               className="btn btn-info"
-              table="tablee"
+              table="tableee"
               filename="Production Slot Summary"
               sheet="tablexls"
               buttonText="Download As Excel"
