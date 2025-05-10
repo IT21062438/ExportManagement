@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "../axiosConfig";
 import Footer from "./Footer";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 class EditPosted extends Component {
   constructor(props) {
@@ -108,7 +108,7 @@ class EditPosted extends Component {
       //Put data to back end using the Http link
       axios.put(`/export-details/update/${id}`, data).then((res) => {
         if (res.data.success) {
-          Swal.fire('Updated','Updated Successfully','success')
+          Swal.fire("Updated", "Updated Successfully", "success");
           //alert("Export Details Updated Successfully");
           this.setState({
             ProductID: "",
@@ -123,40 +123,6 @@ class EditPosted extends Component {
       });
     }
   };
-
-  //   onSubmit = (e) =>{
-  //     e.preventDefault();
-  //     const id = this.props.match.params.id;
-  //     const {ProductID,ShipmentID,Date,UnitPrice,Qty,Type,Description} = this.state;
-  //     const data ={
-  //         ProductID:ProductID,
-  //         ShipmentID:ShipmentID,
-  //         Date:Date,
-  //         UnitPrice:UnitPrice,
-  //         Qty:Qty,
-  //         Type:Type,
-  //         Description:Description
-  //     }
-  //     console.log(data)
-
-  //     axios.put(`/exportDetails/update/${id}`,data).then((res) =>{
-  //         if(res.data.success){
-  //             alert("Export Details Updated Successfully")
-  //             this.setState(
-  //                 {
-  //                     ProductID:"",
-  //                     ShipmentID:"",
-  //                     Date:"",
-  //                     UnitPrice : "",
-  //                     Qty:"",
-  //                     Type : "",
-  //                     Description:"",
-  //                 }
-  //             )
-  //         }
-  //     })
-
-  // }
 
   componentDidMount() {
     const id = this.props.match.params.id;
@@ -179,7 +145,7 @@ class EditPosted extends Component {
     return (
       <div id="wrapper" className="toggled">
         <div id="page-content-wrapper">
-        <nav
+          <nav
             className="navbar navbar-expand-lg rounded-3"
             style={{ backgroundColor: "#006a4e" }}
           >
@@ -262,7 +228,6 @@ class EditPosted extends Component {
                     value={this.state.ShipmentID}
                     onChange={this.handleInputChange}
                     required
-                    readOnly
                   />
                   <div style={{ fontSize: 15, color: "red" }}>
                     {this.state.ShipmentIDError}
@@ -274,7 +239,7 @@ class EditPosted extends Component {
                   <input
                     type="date"
                     className="form-control"
-                    name="requirment1"
+                    name="date"
                     placeholder="Date"
                     value={this.state.Date}
                     onChange={this.handleDateInputChange}

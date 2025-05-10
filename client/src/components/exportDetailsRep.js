@@ -8,7 +8,7 @@ const generatePDF = (exportDetails) => {
   const doc = new jsPDF();
   const tableColumn = [
     "ProductID",
-    "ShipmenTID",
+    "ShipmentID",
     "Date",
     "UnitPrice",
     "Qty",
@@ -20,7 +20,7 @@ const generatePDF = (exportDetails) => {
   exportDetails.map((exportDetail) => {
     const exportData = [
       exportDetail.ProductID,
-      exportDetail.ShipmenTID,
+      exportDetail.ShipmentID,
       exportDetail.Date,
       exportDetail.UnitPrice,
       exportDetail.Qty,
@@ -71,7 +71,9 @@ export default class exportDetailsRep extends Component {
         exportDetails.ProductID.toLowerCase().includes(searchKey) ||
         exportDetails.ShipmentID.toLowerCase().includes(searchKey) ||
         exportDetails.Type.toLowerCase().includes(searchKey.toLowerCase()) ||
-        exportDetails.Description.toLowerCase().includes(searchKey.toLowerCase()) ||
+        exportDetails.Description.toLowerCase().includes(
+          searchKey.toLowerCase()
+        ) ||
         exportDetails.Qty.toString().includes(searchKey)
     );
 
@@ -157,7 +159,7 @@ export default class exportDetailsRep extends Component {
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
               className="btn btn-info"
-              table="tablee"
+              table="tableee"
               filename="Export Details Summary"
               sheet="tablexls"
               buttonText="Download As Excel"
