@@ -140,7 +140,7 @@ export default class exportDetailsRep extends Component {
                 className="h3 mb-3 font-weight-normal text-info rounded-3 "
                 style={{ backgroundColor: "#0E3662", padding: "10px" }}
               >
-                <b>REPORTS</b>
+                <b>EXPORT REPORTS</b>
               </h1>
             </center>
             <hr />
