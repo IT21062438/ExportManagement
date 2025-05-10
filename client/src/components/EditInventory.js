@@ -320,7 +320,6 @@ export default class EditInventory extends Component {
                         name="cusID"
                         placeholder="Enter Customer ID"
                         value={this.state.cusID}
-                        readOnly
                         onChange={this.handleInputChange}
                         required
                       />
@@ -339,7 +338,6 @@ export default class EditInventory extends Component {
                         name="proName"
                         placeholder="Enter Product Name"
                         value={this.state.proName}
-                        readOnly
                         onChange={this.handleInputChange}
                         required
                       />
@@ -360,7 +358,6 @@ export default class EditInventory extends Component {
                         name="stockedDate"
                         placeholder="Enter Stocked Date"
                         value={this.state.stockedDate}
-                        readOnly
                         onChange={this.handleInputChange}
                         required
                       />

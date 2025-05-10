@@ -73,7 +73,9 @@ export default class inventoryRep extends Component {
         //  material.matID.toLowerCase().includes(searchKey) ||
         inventory.cusID.toLowerCase().includes(searchKey) ||
         inventory.proName.toLowerCase().includes(searchKey) ||
-        inventory.category.toLowerCase().includes(searchKey)
+        inventory.category.toLowerCase().includes(searchKey) ||
+        inventory.qty.toString().includes(searchKey) ||
+        inventory.price.toString().includes(searchKey)
     );
 
     this.setState({ inventory: result });
@@ -127,7 +129,7 @@ export default class inventoryRep extends Component {
                       class="nav-link"
                       href="/intrep"
                     >
-                      Reports
+                    &#62; Inventory Reports
                     </a>
                   </li>
                 </ul>
@@ -139,7 +141,7 @@ export default class inventoryRep extends Component {
                 className="h3 mb-3 font-weight-normal text-info rounded-3 "
                 style={{ backgroundColor: "#0E3662", padding: "10px" }}
               >
-                <b>REPORTS</b>
+                <b>INVENTORY REPORTS</b>
               </h1>
             </center>
             <hr />
@@ -240,13 +242,13 @@ export default class inventoryRep extends Component {
                     <th scope="col">#</th>
                     <th scope="col">InventoryID</th>
 
-                    <th scope="col">cusID</th>
-                    <th scope="col">proName</th>
-                    <th scope="col">sDate</th>
-                    <th scope="col">scDate</th>
-                    <th scope="col">category</th>
-                    <th scope="col">qty</th>
-                    <th scope="col">price</th>
+                    <th scope="col">Customer ID</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Stocked Date</th>
+                    <th scope="col">Scheduled Date</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Qty Kg.</th>
+                    <th scope="col">Price</th>
                     <th scope="col">Total</th>
                   </tr>
                 </thead>
@@ -267,8 +269,24 @@ export default class inventoryRep extends Component {
 
                       <td>{inventory.cusID}</td>
                       <td>{inventory.proName}</td>
-                      <td>{inventory.stockedDate}</td>
-                      <td>{inventory.scheduledDate}</td>
+                      <td>
+                      {(() => {
+                        const date = new Date(inventory.stockedDate);
+                        const dd = String(date.getDate()).padStart(2, "0");
+                        const mm = String(date.getMonth() + 1).padStart(2, "0");
+                        const yyyy = date.getFullYear();
+                        return `${dd}/${mm}/${yyyy}`;
+                      })()}
+                      </td>
+                      <td>
+                      {(() => {
+                        const date = new Date(inventory.scheduledDate);
+                        const dd = String(date.getDate()).padStart(2, "0");
+                        const mm = String(date.getMonth() + 1).padStart(2, "0");
+                        const yyyy = date.getFullYear();
+                        return `${dd}/${mm}/${yyyy}`;
+                      })()}
+                    </td>
                       <td>{inventory.category}</td>
                       <td>{inventory.qty}</td>
                       <td>{inventory.price}</td>

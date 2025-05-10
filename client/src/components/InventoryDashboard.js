@@ -42,7 +42,9 @@ export default class InventoryDashboard extends Component {
       (inventory) =>
         inventory.cusID.toLowerCase().includes(searchKey) ||
         inventory.proName.toLowerCase().includes(searchKey) ||
-        inventory.category.toLowerCase().includes(searchKey)
+        inventory.category.toLowerCase().includes(searchKey) ||
+        inventory.qty.toString().includes(searchKey) ||
+        inventory.price.toString().includes(searchKey)
     );
 
     this.setState({ inventory: result });
@@ -238,8 +240,31 @@ export default class InventoryDashboard extends Component {
 
                       <td>{inventory.cusID}</td>
                       <td>{inventory.proName}</td>
-                      <td>{inventory.stockedDate}</td>
-                      <td>{inventory.scheduledDate}</td>
+                      <td>
+                        {(() => {
+                          const date = new Date(inventory.stockedDate);
+                          const dd = String(date.getDate()).padStart(2, "0");
+                          const mm = String(date.getMonth() + 1).padStart(
+                            2,
+                            "0"
+                          );
+                          const yyyy = date.getFullYear();
+                          return `${dd}/${mm}/${yyyy}`;
+                        })()}
+                      </td>
+                      <td>
+                        {(() => {
+                          const date = new Date(inventory.scheduledDate);
+                          const dd = String(date.getDate()).padStart(2, "0");
+                          const mm = String(date.getMonth() + 1).padStart(
+                            2,
+                            "0"
+                          );
+                          const yyyy = date.getFullYear();
+                          return `${dd}/${mm}/${yyyy}`;
+                        })()}
+                      </td>
+
                       <td>{inventory.category}</td>
                       <td>{inventory.qty}</td>
                       <td>{inventory.price}</td>
