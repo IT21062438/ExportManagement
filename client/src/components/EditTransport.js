@@ -150,7 +150,7 @@ export default class EditTransport extends Component {
       //component organizer
       <div className="content" style={{ paddingLeft: "70px" }}>
       <div className="col-md-8 mt-4 mx-auto">
-        <h1 className="h3 mb-3 font-weight-nomal">Update TR details</h1>
+        
 
         {/* custom navigation        */}
         <nav
@@ -169,14 +169,23 @@ export default class EditTransport extends Component {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+              <ul class="navbar-nav">
+              <li className="nav-item active">
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    className="nav-link"
+                    href="/home"
+                  >
+                    Dashboard
+                  </a>
+                </li>
               <li class="nav-item active">
                 <a
                   style={{ textDecoration: "none", color: "white" }}
                   class="nav-link"
-                  href="/posttr"
+                  href="/hometr"
                 >
-                  TR Details
+                  &#62; TR Details
                 </a>
               </li>
               <li class="nav-item">
@@ -186,7 +195,7 @@ export default class EditTransport extends Component {
                   href=""
                 >
                   {" "}
-                  &#62; Update/Edit Details{" "}
+                  &#62; Edit Details{" "}
                   <span class="sr-only">(current)</span>{" "}
                 </a>
               </li>
@@ -194,7 +203,7 @@ export default class EditTransport extends Component {
           </div>
         </nav>
         <hr />
-
+        <h1 className="h3 mb-3 font-weight-nomal">Update TR details</h1>
         {/* Edit form */}
         <form className="needs-validation" noValidate>
           <div className="form-group" style={{ marginBottom: "15px" }}>
@@ -226,7 +235,7 @@ export default class EditTransport extends Component {
               value={this.state.VehicleID}
               onChange={this.handleInputChange}
               required
-              readOnly
+              
             />
             <div style={{ fontSize: 15, color: "red" }}>
               {this.state.VehicleIDError}

@@ -44,10 +44,11 @@ export default class HomeTR extends Component {
   filterData(transportModel, searchKey) {
     const result = transportModel.filter(
       (transportModel) =>
-        transportModel.TransportID.toLowerCase().includes(searchKey) ||
+        transportModel.TransportID.toString().includes(searchKey) ||
         transportModel.VehicleType.toLowerCase().includes(searchKey) ||
-        transportModel.VehicleID.toLowerCase().includes(searchKey) ||
-        transportModel.Destination.toLowerCase().includes(searchKey)
+        transportModel.VehicleID.toString().includes(searchKey) ||
+        transportModel.Destination.toLowerCase().includes(searchKey) ||
+        transportModel.ShipmentID.toString().includes(searchKey)
     );
     this.setState({ transportModel: result });
   }
@@ -63,7 +64,7 @@ export default class HomeTR extends Component {
     });
   };
 
-  //gather outputs
+  
   render() {
     return (
       //component organizer
@@ -71,7 +72,7 @@ export default class HomeTR extends Component {
         <div style={{ backgroundColor: "#e3dac9" }} id="page-content-wrapper">
           <div className="container-fluid"></div>
 
-          {/*<div className="row">*/}
+         
 
           {/* custom navigation        */}
           <nav
@@ -141,7 +142,7 @@ export default class HomeTR extends Component {
             style={{ backgroundColor: "#0E3662" }}
           >
             <a href="/addtr" style={{ textDecoration: "none", color: "white" }}>
-              Add&nbsp;
+              Add New TR&nbsp;
               <i class="fas fa-plus-circle"></i>
             </a>
           </button>
@@ -190,7 +191,16 @@ export default class HomeTR extends Component {
                   <td>{transportModel.VehicleID}</td>
                   <td>{transportModel.VehicleType}</td>
                   <td>{transportModel.Destination}</td>
-                  <td>{transportModel.TransportDate}</td>
+
+                  <td>
+                    {(() => {
+                      const date = new Date(transportModel.TransportDate);
+                      const dd = String(date.getDate()).padStart(2, "0");
+                      const mm = String(date.getMonth() + 1).padStart(2, "0");
+                      const yyyy = date.getFullYear();
+                      return `${dd}/${mm}/${yyyy}`;
+                    })()}
+                  </td>
                   <td>{transportModel.ShipmentID}</td>
 
                   <td>

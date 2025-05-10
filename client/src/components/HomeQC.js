@@ -43,8 +43,8 @@ export default class HomeQC extends Component {
   filterData(postsQC, searchKey) {
     const result = postsQC.filter(
       (postsQC) =>
-        postsQC.ProductID.toLowerCase().includes(searchKey) ||
-        postsQC.BuyerID.toLowerCase().includes(searchKey) ||
+        postsQC.ProductID.toString().includes(searchKey) ||
+        postsQC.BuyerID.toString().includes(searchKey) ||
         postsQC.ProductType.toLowerCase().includes(searchKey) ||
         postsQC.RequirementSatisfication.toLowerCase().includes(searchKey) ||
         postsQC.QualityRate.toString().includes(searchKey) ||

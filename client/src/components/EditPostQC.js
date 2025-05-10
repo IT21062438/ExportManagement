@@ -186,13 +186,22 @@ export default class EditPostQC extends Component {
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
+              <li className="nav-item active">
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    className="nav-link"
+                    href="/home"
+                  >
+                    Dashboard
+                  </a>
+                </li>
                 <li class="nav-item active">
                   <a
                     style={{ textDecoration: "none", color: "white" }}
                     class="nav-link"
                     href="/homeqc"
                   >
-                    QC Details
+                   &#62; QC Details
                   </a>
                 </li>
                 <li class="nav-item">

@@ -562,7 +562,19 @@ export default class HomePosted extends Component {
                     </a>
                   </td>
                   <td>{exportDetail.ShipmentID}</td>
-                  <td>{exportDetail.Date}</td>
+                  <td>
+                        {(() => {
+                          const date = new Date(exportDetail.Date);
+                          const dd = String(date.getDate()).padStart(2, "0");
+                          const mm = String(date.getMonth() + 1).padStart(
+                            2,
+                            "0"
+                          );
+                          const yyyy = date.getFullYear();
+                          return `${dd}/${mm}/${yyyy}`;
+                        })()}
+                      </td>
+                  
                   <td>{exportDetail.UnitPrice}</td>
                   <td>{exportDetail.Qty}</td>
                   <td>{exportDetail.Type}</td>
