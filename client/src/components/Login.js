@@ -47,7 +47,7 @@ function Login() {
 
         setTimeout(() => {
           if (role === "admin") {
-            history.push("/admin");
+            history.push("/home");
           } else {
             history.push("/profile");
           }
