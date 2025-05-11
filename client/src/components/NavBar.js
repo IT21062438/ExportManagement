@@ -104,7 +104,7 @@ class NavBar extends Component {
                   <a href="/expDash" className="dropdown-item">
                     <i className="fas fa-chart-line me-2"></i>Export Dashboard
                   </a>
-                  
+
                   <a href="/exprep" className="dropdown-item">
                     <i className="fas fa-file-alt me-2"></i>Export reports
                   </a>
@@ -146,16 +146,6 @@ class NavBar extends Component {
                   </a>
                 </div>
               </div>
-            </li>
-            <hr
-              className="my-4"
-              style={{ borderColor: "rgba(255,255,255,0.1)" }}
-            />
-            <li className="nav-item">
-              <a href="/admin" className="nav-link">
-                <i className="fas fa-users-cog me-2"></i>
-                <span className="nav-link-text">Admin</span>
-              </a>
             </li>
             <hr
               className="my-4"
@@ -220,20 +210,6 @@ class NavBar extends Component {
                     </button>
                   </a>
 
-                  {/* <button
-                    type="button"
-                    className="btn btn-outline-light"
-                    onClick={() => {
-                      const confirmed = window.confirm(
-                        "Are you sure you want to logout?"
-                      );
-                      if (confirmed) {
-                        window.location.href = "/";
-                      }
-                    }}
-                  >
-                    <i className="fas fa-sign-out-alt"></i> Logout
-                  </button> */}
                   <button
                     type="button"
                     className="btn btn-outline-light"
