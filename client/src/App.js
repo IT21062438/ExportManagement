@@ -57,18 +57,33 @@ import ProfileDetails from "./components/ProfileDetails.js";
 
 export default class App extends Component {
   render() {
+    const hideNavbarPaths = [
+      "/",
+      "/signup",
+      "/home",
+      "/profile",
+      
+    ];
     return (
       <BrowserRouter>
-        {window.location.pathname !== "/" &&
+        {/* {window.location.pathname !== "/" &&
           window.location.pathname !== "/signup" &&
-          window.location.pathname !== "/home" && <NavBar />}
+          window.location.pathname !== "/home" &&
+          window.location.pathname !== "/profile" && 
+          <NavBar />} */}
+
+        {!hideNavbarPaths.includes(window.location.pathname) && <NavBar />}
 
         <div className="page-content-wrapper">
           <ToastContainer />
           <Route path="/" exact component={Login}></Route>
           <Route path="/signup" exact component={Signup}></Route>
           <Route path="/profile" exact component={Profile}></Route>
-          <Route path="/profiledetails" exact component={ProfileDetails}></Route>
+          <Route
+            path="/profiledetails"
+            exact
+            component={ProfileDetails}
+          ></Route>
           <Route path="/home" exact component={Home}></Route>
           <Route path="/intdash" exact component={InventoryDashboard}></Route>
           <Route path="/intadd" exact component={CreateInventory}></Route>
