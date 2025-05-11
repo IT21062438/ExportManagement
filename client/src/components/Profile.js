@@ -66,9 +66,8 @@ function Profile() {
           onClick={() => history.push("/chatbot")}
           style={{ cursor: "pointer" }}
         >
-          <i className="fas fa-check-circle"></i>
-          <h3>Completed Orders</h3>
-          <p>138</p>
+          <i className="fas fa-robot"></i>
+          <h3>Chat With Bot</h3>
         </div>
         <div className="stat-card">
           <i className="fas fa-clock"></i>
