@@ -11,6 +11,7 @@ import ProductionDash from "./components/ProductionDash";
 import ProductionEdit from "./components/ProductionEdit";
 import ProductionDetails from "./components/ProductionDetails";
 import ProductionRep from "./components/ProductionRep";
+import Chatbot from "./components/Chatbot";
 
 import Home from "./components/Home";
 import Admin from "./components/Admin";
@@ -130,6 +131,7 @@ export default class App extends Component {
           <Route path="/addtr" component={CreateTransport}></Route>
           <Route path="/edittr/:id" component={EditTransport}></Route>
           <Route path="/posttr/:id" component={PostDetailsTR}></Route>
+          <Route path="/chatbot" exact component={Chatbot}></Route>
         </div>
       </BrowserRouter>
     );

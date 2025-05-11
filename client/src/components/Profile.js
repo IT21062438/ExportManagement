@@ -61,7 +61,11 @@ function Profile() {
           <i className="fas fa-question-circle"></i>
           <h3>Add Inquiry</h3>
         </div>
-        <div className="stat-card">
+        <div
+          className="stat-card"
+          onClick={() => history.push("/chatbot")}
+          style={{ cursor: "pointer" }}
+        >
           <i className="fas fa-check-circle"></i>
           <h3>Completed Orders</h3>
           <p>138</p>

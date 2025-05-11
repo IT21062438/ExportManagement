@@ -58,7 +58,7 @@ class NavBar extends Component {
               className="my-4"
               style={{ borderColor: "rgba(255,255,255,0.1)" }}
             />
-
+             
             {/* Admin-only Sections */}
             {isAdmin && (
               <>
