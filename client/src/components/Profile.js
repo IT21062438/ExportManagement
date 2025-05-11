@@ -69,7 +69,7 @@ function Profile() {
         <div className="stat-card">
           <i className="fas fa-clock"></i>
           <h3>Pending Orders</h3>
-          <p>8</p>
+          
         </div>
       </div>
 
