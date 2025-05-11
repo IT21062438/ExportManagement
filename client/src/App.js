@@ -57,19 +57,13 @@ import ProfileDetails from "./components/ProfileDetails.js";
 
 export default class App extends Component {
   render() {
-    const hideNavbarPaths = [
-      "/",
-      "/signup",
-      "/home",
-      "/profile",
-      
-    ];
+    const hideNavbarPaths = ["/", "/signup", "/home", "/profile"];
     return (
       <BrowserRouter>
         {/* {window.location.pathname !== "/" &&
           window.location.pathname !== "/signup" &&
           window.location.pathname !== "/home" &&
-          window.location.pathname !== "/profile" && 
+          window.location.pathname !== "/profile" &&
           <NavBar />} */}
 
         {!hideNavbarPaths.includes(window.location.pathname) && <NavBar />}
@@ -141,3 +135,5 @@ export default class App extends Component {
     );
   }
 }
+
+

@@ -6,7 +6,6 @@ function Profile() {
   const [userName, setUserName] = useState("User");
   const history = useHistory();
 
-
   useEffect(() => {
     const storedName = localStorage.getItem("loggedInUser");
     if (storedName) {
@@ -46,19 +45,21 @@ function Profile() {
           <h3>Total Orders</h3>
           <p>150</p>
         </div> */}
-        <div 
-  className="stat-card" 
-  onClick={() => history.push('/requests')}
-  style={{ cursor: 'pointer' }}
->
-  <i className="fas fa-box"></i>
-  <h3>Total Orders</h3>
-  <p>150</p>
-</div>
-        <div className="stat-card">
-          <i className="fas fa-truck"></i>
-          <h3>Active Shipments</h3>
-          <p>12</p>
+        <div
+          className="stat-card"
+          onClick={() => history.push("/requests")}
+          style={{ cursor: "pointer" }}
+        >
+          <i className="fas fa-hand-holding-medical"></i>
+          <h3>Add Request</h3>
+        </div>
+        <div
+          className="stat-card"
+          onClick={() => history.push("/inquiries")}
+          style={{ cursor: "pointer" }}
+        >
+          <i className="fas fa-question-circle"></i>
+          <h3>Add Inquiry</h3>
         </div>
         <div className="stat-card">
           <i className="fas fa-check-circle"></i>

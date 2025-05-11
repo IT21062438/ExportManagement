@@ -58,8 +58,6 @@ function Login() {
       } else {
         handleError(message);
       }
-
-      console.log(result);
     } catch (error) {
       handleError(error.message);
     }
