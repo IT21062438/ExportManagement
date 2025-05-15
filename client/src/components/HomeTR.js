@@ -127,7 +127,7 @@ export default class HomeTR extends Component {
       this.retrivePosts();
     });
   };
-
+//filter data
   filterData(transportModel, searchKey) {
     const result = transportModel.filter(
       (transportModel) =>

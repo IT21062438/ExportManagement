@@ -43,6 +43,10 @@ class NavBar extends Component {
                   <a href="/reqadd" className="dropdown-item">
                     <i className="fas fa-plus-circle me-2"></i>Add request
                   </a>
+                  <a href="/reqrep" className="dropdown-item">
+                  <i className="fas fa-file-alt me-2"></i>
+                    Request Report
+                  </a>
 
                   <a href="/inquiries" className="dropdown-item">
                     <i className="fas fa-question-circle me-2"></i>Inquiries
@@ -50,6 +54,10 @@ class NavBar extends Component {
                   </a>
                   <a href="/inqadd" className="dropdown-item">
                     <i className="fas fa-plus-circle me-2"></i>Add inquiry
+                  </a>
+                  <a href="/inqrep" className="dropdown-item">
+                  <i className="fas fa-file-alt me-2"></i>
+                    Inquiry Reports
                   </a>
                 </div>
               </div>
